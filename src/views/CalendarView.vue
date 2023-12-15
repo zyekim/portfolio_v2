@@ -20,8 +20,9 @@
       </ul>
       <div class="calendar__weeks">
         <ul class="calendar__week">
-          <li v-for="date in dates" :key="date">
-            <p class="date">{{ date }}</p>
+          <li v-for="(date, idx) in dates" :key="idx"
+          :class="getDateColor(date.isCurrMonth,idx)">
+            <p class="date">{{ date.date }}</p>
           </li>
         </ul>
       </div>
@@ -58,6 +59,11 @@ export default {
   created() {
     this.init()
   },
+  // watch: {
+  //   currYear: function(value){
+  //     console.log(value)
+  //   }
+  // },
   methods: {
     init(){
       const selectedDate = new Date();
@@ -66,45 +72,39 @@ export default {
       this.currMonth = selectedDate.getMonth() + 1; // 0 based
       this.currDate = selectedDate.getDate();
 
-      this.getFisrtLastDay();
+      this.buildCalendar(this.currMonth, this.currYear);
 
     },
     goPrev(month){
       if(month == 1){
         this.currMonth = 12;
-        this.currYear -= 1;
+        this.currYear = this.currYear - 1;
       }else {
         this.currMonth -= 1;
       }
+
+      this.buildCalendar(this.currMonth, this.currYear);
     },
     goNext(month) {
-        if(month == 12){
+      if(month == 12){
         this.currMonth = 1;
-        this.currYear += 1;
+        this.currYear = this.currYear + 1;
       }else {
         this.currMonth += 1;
       }
+      this.buildCalendar(this.currMonth, this.currYear);
     },
-    // buildCalendar(month,year) {
 
     // },
-    getFisrtLastDay(){
-// month, year
-      // 이전 달의 마지막 날짜와 요일 구하기
-      // let firstDate = new Date(this.currYear,this.currMonth - 1, 1).getDate();
-      // let firstDay = new Date(this.currYear,this.currMonth , 0).getDay();
-
-      // let lastDate = new Date(this.currYear,this.currMonth, 0).getDate();
-      // console.log(lastDate, firstDate,firstDay);
-
+    buildCalendar(month,year){
 
       // 이전 달의 마지막 날 날짜와 요일 구하기
-        let startDay = new Date(this.currYear, this.currMonth - 1, 0);
+        let startDay = new Date(year, month - 1, 0);
         let prevDate = startDay.getDate();
         let prevDay = startDay.getDay();
 
         // 이번 달의 마지막날 날짜와 요일 구하기
-        let endDay = new Date(this.currYear, this.currMonth, 0);
+        let endDay = new Date(year, month, 0);
         let nextDate = endDay.getDate();
         let nextDay = endDay.getDay();
 
@@ -113,17 +113,29 @@ export default {
 
         let prevDates = [];
         for(let prev = prevDate - prevDay; prev <= prevDate ; prev++) {
-          prevDates.push(prev);
+          let data = {
+            date : prev,
+            isCurrMonth : false,
+          }
+          prevDates.push({...data});
         }
 
         let currDates = [];
         for(let date = 1; date <= nextDate ; date++) {
-          currDates.push(date);
+          let data = {
+            date : date,
+            isCurrMonth : true,
+          }
+          currDates.push({...data});
         }
 
         let nextDates = [];
         for(let next = 1; next <= 6 - nextDay ; next++) {
-          nextDates.push(next);
+          let data = {
+            date : next,
+            isCurrMonth : false,
+          }
+          nextDates.push({...data});
         }
 
         return this.dates=[
@@ -132,12 +144,18 @@ export default {
           ...nextDates,
         ]
 
+    },
+    getDateColor(isCurrMonth,idx) {
+      // date
+      if(!isCurrMonth) {
+        if(idx%7 == 0) return 'holiday opacity'
+        else if(idx%7 == 6) return 'saturday opacity'
+        else return 'opacity'
+      }else{
+        if(idx%7 == 0) return 'holiday';
+        else if(idx%7 == 6) return 'saturday';
+      }
     }
-    // getFirstLast(){
-
-    // }
-
-
   }
 }
 </script>
@@ -171,7 +189,14 @@ export default {
       font-size: 20px;
       font-weight: 500;
       line-height: 1.25;
-      cursor: pointer;
+      &.calendar__arrow {
+        cursor: pointer;
+        &:active ,
+        &:hover {
+          background-color: #eee;
+          border-radius: 4px;
+        }
+      }
     }
   }
 
@@ -205,15 +230,36 @@ export default {
       height: 90px;
 
       .date {
+        position: relative;
         text-align: left;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
+        &:before {
+          content: "";
+          position: absolute;
+          left: -3px;
+          top: -1px;
+          width: 25px;
+          height: 25px;
+          border-radius: 100%;
+          background-color: transparent;
+          z-index: -1;
+        }
       }
-      &:first-of-type > .date {
+      &.holiday > .date{
         color: #d63333;
       }
-       &:last-of-type > .date {
+      &.saturday > .date {
         color: #3367d6;
+      }
+      &.opacity > .date {
+        opacity: 0.4;
+      }
+      &.today > .date {
+        color: #fff;
+        &:before{
+          background-color: #8fe096;
+        }
       }
     }
   }
