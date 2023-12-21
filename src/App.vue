@@ -1,34 +1,33 @@
 <template>
   <div id="app">
-    <nav>
+    <!-- <nav v-if="false" class="app-nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/CalendarView">Calendar</router-link>
-    </nav>
+    </nav> -->
     <router-view/>
   </div>
 </template>
 
 <style>
-@import url('./assets/scss/reset.scss');
+@import url('./assets/scss/index.scss');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2f3b47;
   margin: 0 auto;
 }
 
-nav {
+.app-nav {
   padding: 30px;
 }
 
-nav a {
+.app-nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #2f3b47;
 }
 
-nav a.router-link-exact-active {
+.app-nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
