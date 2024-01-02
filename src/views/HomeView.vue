@@ -18,7 +18,7 @@
               <vue-typer
                 class="custom-type"
                 :repeat='Infinity'
-                :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는"]'
+                :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 장인"]'
                 :shuffle='false'
                 initial-action='typing'
                 :pre-type-delay='70'
@@ -33,9 +33,12 @@
             </p>
             <p class="job"> 주니어 프론트엔드개발자, 웹퍼블리셔 김지혜입니다 :&#41; </p>
             <ul class="links">
-              <li class="links__item">깃헙</li>
-              <li class="links__item">Resume</li>
-              <li class="links__item">velog</li>
+              <li class="links__item" v-for="item in links" :key="item.name" @click="movePage(item.name)">
+                <img :src="require(`@/assets/images/${item.src}`)" :key="item.name">
+              </li>
+              <!-- <li class="links__item">깃헙<img src="@/assets/images/github.png" alt="깃헙" @click="movePage($attr)"></li>
+              <li class="links__item">Resume<img src="@/assets/images/notion.png" alt="노션"></li>
+              <li class="links__item">velog<img src="@/assets/images/velog.jpeg" alt="벨로그"></li> -->
             </ul>
           </div>
         </div>
@@ -67,12 +70,38 @@ export default {
   data(){
     return {
       page: '',
-      // msg: '{{ 사용자 편의를 항상고민하는 }}'
+      links: [
+        { name: '깃헙',
+        src: 'github.png',
+        },
+        { name: '노션',
+        src: 'notion.png',
+        },
+        { name: '벨로그',
+        src: 'velog.jpeg',
+        },
+      ]
     }
   },
   components: {
-    // vueTyper
     // HelloWorld
+  },
+  methods:{
+    movePage(page){
+      let href = '';
+      switch (page) {
+        case '깃헙':
+          href = 'https://github.com/zyekim';
+          break;
+        case '노션':
+          href = 'https://www.notion.so/zyeKim-Code-e4b2c4cd4dbf4280b4cffee22669a8cf?pvs=4';
+          break;
+        case '벨로그':
+          href = 'https://velog.io/@k_jihye92/posts';
+          break;
+      }
+      return window.open( href, '_blank');
+    }
   }
 }
 </script>
@@ -155,6 +184,34 @@ export default {
         font-weight: 700;
         font-size: 32px;
       }
+    }
+  }
+}
+
+.links {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  height: 40px;
+  &__item {
+    font-size: 0;
+    &:not(:first-of-type){
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 1px;
+        height: 30px;
+        background-color: #eee;
+        // margin-right: 10px;
+      }
+    }
+    img {
+      display: inline-block;
+      width: auto;
+      height: 40px;
     }
   }
 }
