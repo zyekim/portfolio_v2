@@ -5,12 +5,12 @@
       <div class="z-modal__wrap">
         <div class="z-modal__header">
           <h1 class="z-modal__title">{{ title }}</h1>
-          <button @click="$emit('close')">X</button>
+          <button class="z-modal__close" @click="$emit('close')">X</button>
         </div>
         <div class="z-modal__contents">
           <slot />
         </div>
-        <div class="z-modal__footer">
+        <div class="z-modal__footer" v-if="$slots.action">
             <div class="z-modal__actions">
               <slot name="action">
               </slot>
@@ -32,8 +32,12 @@ export default {
     title: {
       type: String,
       required: false
-    }
-  }
+    },
+    action: {
+      type: Boolean,
+      required: false
+    },
+  },
 }
 </script>
 
@@ -56,14 +60,53 @@ export default {
     background: rgba(33,33,33,0.46);
   }
   &__wrap{
-    padding: 40px;
     width: 380px;
+    max-height: calc(100vh - 40%);
     border-radius: 5px;
     background-color: #fff;
     z-index: 1;
+    overflow-y: scroll;
+  }
+  &__header {
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #fff;
+  }
+  &__footer {
+    position: sticky;
+    bottom: 0;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__close {
+    margin-left: auto;
   }
   &__title {
-
+    text-align: left;
+  }
+  &__contents {
+    padding: 20px 10px 10px;
+    min-height: fit-content;
+    height: auto;
+    overflow-y: scroll;
+    text-align: left;
+  }
+  &.no-title {
+    #{$self}__header {
+      height: 40px;
+    }
+    #{$self}__contents {
+      padding-top: 10px;
+    }
   }
 }
 //transition
