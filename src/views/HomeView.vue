@@ -35,46 +35,80 @@
             <ul class="links">
               <li class="links__item" v-for="item in links" :key="item.name" @click="movePage(item.name)">
                 <img :src="require(`@/assets/images/${item.src}`)" :key="item.name">
+                <span class="links__tooltip">{{ item.name }}</span>
               </li>
-              <!-- <li class="links__item">깃헙<img src="@/assets/images/github.png" alt="깃헙" @click="movePage($attr)"></li>
-              <li class="links__item">Resume<img src="@/assets/images/notion.png" alt="노션"></li>
-              <li class="links__item">velog<img src="@/assets/images/velog.jpeg" alt="벨로그"></li> -->
             </ul>
           </div>
         </div>
 
         <aside>
-          <!-- 이미지 추가예정 -->
+          <!-- todo: 이미지 추가예정 -->
         </aside>
       </section>
       <section class="skill">
-        <div class="skill__block">
-          <p>vue</p>
-          <span style="display:flex;width: 50px;height:50px;border:4px solid red;border-radius: 100%;"></span>
-          <p>react</p>
+        <h2>What my develop skill included</h2>
+        <div class="skill__block-wrap">
+          <div class="skill__block">
+            <div class="skill__inner">
+              <p>vue</p>
+              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+            </div>
+            <div class="skill__inner">
+              <p>react</p>
+            </div>
+          </div>
+          <div class="skill__block">
+            <div class="skill__inner">
+              <p>Javascript</p>
+              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+            </div>
+            <div class="skill__inner">
+              <p>jQuery</p>
+              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+            </div>
+          </div>
+          <div class="skill__block">
+            <div class="skill__inner">
+              <p>HTML</p>
+              <span class="skill__bar"></span>
+            </div>
+            <div class="skill__inner">
+              <p>CSS</p>
+              <span class="skill__bar"></span>
+            </div>
+            <div class="skill__inner">
+              <p>SCSS</p>
+              <span class="skill__bar"></span>
+            </div>
+          </div>
         </div>
-        <div class="skill__block"></div>
-        <div class="skill__block"></div>
       </section>
       <section class="project"></section>
+      <section class="project">
+        <div>
+          <button @click="openModal = true">모달창</button>
+          <ZModal :title="'팝업타이틀'" v-model="openModal" @close="openModal = false"></ZModal>
+        </div>
+      </section>
     </main>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import ZModal from '@/components/ZModal.vue'
 
 export default {
   name: 'HomeView',
   data(){
     return {
+      openModal: false,
       page: '',
       links: [
         { name: '깃헙',
         src: 'github.png',
         },
-        { name: '노션',
+        { name: 'Resume',
         src: 'notion.png',
         },
         { name: '벨로그',
@@ -84,7 +118,7 @@ export default {
     }
   },
   components: {
-    // HelloWorld
+    ZModal
   },
   methods:{
     movePage(page){
@@ -93,7 +127,7 @@ export default {
         case '깃헙':
           href = 'https://github.com/zyekim';
           break;
-        case '노션':
+        case 'Resume':
           href = 'https://www.notion.so/zyeKim-Code-e4b2c4cd4dbf4280b4cffee22669a8cf?pvs=4';
           break;
         case '벨로그':
@@ -111,6 +145,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .header {
   padding: 0 20px;
   position: fixed;
@@ -121,7 +156,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-
+  z-index: 50;
   .logo {
     font-weight: 700;
     font-size: 22px;
@@ -189,13 +224,15 @@ export default {
 }
 
 .links {
+  $self: '.links';
   margin-top: 30px;
   display: flex;
   column-gap: 10px;
   align-items: center;
   height: 40px;
   &__item {
-    font-size: 0;
+    position: relative;
+    cursor: pointer;
     &:not(:first-of-type){
       &:before {
         content: '';
@@ -205,7 +242,6 @@ export default {
         width: 1px;
         height: 30px;
         background-color: #eee;
-        // margin-right: 10px;
       }
     }
     img {
@@ -213,20 +249,95 @@ export default {
       width: auto;
       height: 40px;
     }
+    &:hover{
+      #{$self}__tooltip {
+        display: block;
+        opacity: 1;
+        transition: 300ms ease-in-out;
+      }
+    }
+  }
+  &__tooltip {
+    padding: 5px 10px;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    border-radius: 4px;
+    box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+    background: #333;
+    color: #fff;
+    z-index: 10;
+    transition: 300ms ease-in-out;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-width: 0;
+      border-bottom-color: #333;
+    }
   }
 }
 
 .skill {
   padding: 60px 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
-  height: 100%;
+  h2 {
+    font-size: 33px;
+    font-weight: 700;
+    color: #2f3b47;
+  }
+  // height: 100%;
+  &__block-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
   &__block{
     padding: 20px 0;
     &:nth-of-type(1) {
       grid-row: 1 / span 2;
+      p {
+        text-align: left;
+      }
     }
+    &:not(:first-of-type){
+      display: flex;
+      flex-flow: row nowrap;
+      column-gap: 10px;
+      align-items: stretch;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      display: inline-block;
+      &::before{
+        content: disc;
+      }
+    }
+    // &:first-of-type{
+    //   background-color: #FF90BC77;
+    // }
+    // &:nth-of-type(2) {
+    //   background-color: #FFC0D977;
+    // }
+  }
+  &__inner {
+    padding: 20px;
+    flex: 1 0 auto;
+    border-radius: 15px;
+    span {
+      margin: 10px auto 0;
+    }
+  }
+  &__bar {
+    width: 100%;
+    background: #FFC0D977;
   }
 }
 
