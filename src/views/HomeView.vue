@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio-wrap">
-    <header class="header">
+    <header class="header" :class="scroll ? 'scroll': ''">
       <h1 class="logo">zyekim <span v-if="false">/{{ page }}</span></h1>
       <nav class="nav">
         <p v-for="page in ['skill','project','work']" :key="page">
@@ -15,7 +15,7 @@
             <p>안녕하세요.
               <br>
               <span class="highlight">
-                <vue-typer class="custom-type" :repeat='Infinity' :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 장인"]'
+                <vue-typer class="custom-type" :repeat='Infinity' :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 고수"]'
                   :shuffle='false' initial-action='typing' :pre-type-delay='70' :type-delay='70' :pre-erase-delay='2000'
                   :erase-delay='250' erase-style='select-all' :erase-on-complete='false' caret-animation='blink' />
               </span>
@@ -36,41 +36,57 @@
       </section>
       <section class="skill">
         <h2>What my develop skill included</h2>
-        <div class="skill__block-wrap">
-          <div class="skill__block">
-            <div class="skill__inner">
-              <p>vue</p>
-              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+        <ul class="skill__list">
+          <li>
+            <p class="skill__name">Vue</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 90%;"></p>
+              <span>90%</span>
             </div>
-            <div class="skill__inner">
-              <p>react</p>
+          </li>
+          <li>
+            <p class="skill__name">React</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 60%;"></p>
+              <span>60%</span>
             </div>
-          </div>
-          <div class="skill__block">
-            <div class="skill__inner">
-              <p>Javascript</p>
-              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+          </li>
+          <li>
+            <p class="skill__name">JS</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 85%;"></p>
+              <span>85%</span>
             </div>
-            <div class="skill__inner">
-              <p>jQuery</p>
-              <span style="display:flex;width: 80px;height:80px;border:4px solid red;border-radius: 100%;"></span>
+          </li>
+          <li>
+            <p class="skill__name">jQuery</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 95%;"></p>
+              <span>95%</span>
             </div>
-          </div>
-          <div class="skill__block">
-            <div class="skill__inner">
-              <p>HTML</p>
-              <span class="skill__bar"></span>
+          </li>
+          <li>
+            <p class="skill__name">HTML</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 98%;"></p>
+              <span>98%</span>
             </div>
-            <div class="skill__inner">
-              <p>CSS</p>
-              <span class="skill__bar"></span>
+          </li>
+          <li>
+            <p class="skill__name">css</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 98%;"></p>
+              <span>98%</span>
             </div>
-            <div class="skill__inner">
-              <p>SCSS</p>
-              <span class="skill__bar"></span>
+          </li>
+          <li>
+            <p class="skill__name">scss</p>
+            <div class="skill__bar-wrap">
+              <p class="skill__bar" style="width: 90%;"></p>
+              <span>90%</span>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
       <section class="project"></section>
       <section class="project">
@@ -99,11 +115,19 @@ export default {
         { name: '벨로그',
         src: 'velog.jpeg',
         },
-      ]
+      ],
+      scroll: false,
     }
   },
   components: {
     // ZModal
+  },
+  mounted() {
+    window.scrollTo(0, 0);
+    document.addEventListener('scroll', this.detectScroll);
+  },
+  unmounted(){
+    document.removeEventListener('scroll', this.detectScroll);
   },
   methods:{
     movePage(page){
@@ -120,7 +144,16 @@ export default {
           break;
       }
       return window.open( href, '_blank');
-    }
+    },
+    detectScroll() {
+      const scrollPosition = (window.scrollY || document.documentElement.scrollTop)
+
+      if (scrollPosition > 0) {
+        this.scroll = true
+      } else if (scrollPosition === 0) {
+        this.scroll = false
+      }
+    },
   }
 }
 </script>
@@ -159,6 +192,10 @@ export default {
       font-weight: 300;
       cursor: pointer;
     }
+  }
+  &.scroll {
+    background-color: #fff;
+    transition: all ease-in-out 300ms;
   }
 }
 
@@ -271,58 +308,68 @@ export default {
 }
 
 .skill {
-  padding: 150px 20px;
+  padding: 100px 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   h2 {
     font-size: 33px;
     font-weight: 700;
     color: #2f3b47;
   }
-  // height: 100%;
-  &__block-wrap{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-  &__block{
-    padding: 20px 0;
-    &:nth-of-type(1) {
-      grid-row: 1 / span 2;
-      p {
-        text-align: left;
-      }
-    }
-    &:not(:first-of-type){
+  &__list {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    width: 1000px;
+    min-width: 0;
+    li {
+      flex: 1 1 calc(50% - 20px);
       display: flex;
-      flex-flow: row nowrap;
-      column-gap: 10px;
-      align-items: stretch;
-    }
-    p {
-      font-size: 18px;
-      font-weight: 500;
-      display: inline-block;
-      &::before{
-        content: disc;
+      column-gap: 20px;
+      align-items: center;
+      min-width: 0;
+      &:first-of-type{
+        flex-basis: 100%;
       }
     }
-    // &:first-of-type{
-    //   background-color: #FF90BC77;
-    // }
-    // &:nth-of-type(2) {
-    //   background-color: #FFC0D977;
-    // }
   }
-  &__inner {
-    padding: 20px;
-    flex: 1 0 auto;
-    border-radius: 15px;
+  &__name {
+    display:inline-grid;
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+    place-content: center;
+    background-color: #f2f1eb;
+    border-radius: 100%;
+    border: 3px solid #739072;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #2f3b47;
+  }
+  &__bar-wrap{
+    flex: 2 1 auto;
+    position: relative;
+    height: 50px;
+    background-color: #dfdfdf59;
+    text-align: center;
+    border-radius: 10px;
     span {
-      margin: 10px auto 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
     }
   }
   &__bar {
-    width: 100%;
-    background: #FFC0D977;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #749073;
   }
 }
 
