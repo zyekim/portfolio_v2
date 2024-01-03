@@ -13,23 +13,12 @@
         <div class="home__left">
           <div class="home__text-wrap">
             <p>안녕하세요.
-            <br>
-            <span class="highlight">
-              <vue-typer
-                class="custom-type"
-                :repeat='Infinity'
-                :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 장인"]'
-                :shuffle='false'
-                initial-action='typing'
-                :pre-type-delay='70'
-                :type-delay='70'
-                :pre-erase-delay='2000'
-                :erase-delay='250'
-                erase-style='select-all'
-                :erase-on-complete='false'
-                caret-animation='blink'
-              />
-            </span>
+              <br>
+              <span class="highlight">
+                <vue-typer class="custom-type" :repeat='Infinity' :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 장인"]'
+                  :shuffle='false' initial-action='typing' :pre-type-delay='70' :type-delay='70' :pre-erase-delay='2000'
+                  :erase-delay='250' erase-style='select-all' :erase-on-complete='false' caret-animation='blink' />
+              </span>
             </p>
             <p class="job"> 주니어 프론트엔드개발자, 웹퍼블리셔 김지혜입니다 :&#41; </p>
             <ul class="links">
@@ -85,30 +74,7 @@
       </section>
       <section class="project"></section>
       <section class="project">
-        <div style="dislplay: flex;">
-          <button @click="modal1 = true">기본 모달창</button>
-          <ZModal :title="'팝업타이틀'" v-model="modal1" @close="modal1 = false">
-            <p v-for="i in 10" :key="i">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum dicta deserunt quo culpa quis.
-            </p>
-            <template #action>
-              <button>확인</button>
-            </template>
-          </ZModal>
-          <button @click="modal2 = true"> 컨텐츠 변경</button>
-           <ZModal :title="'팝업타이틀'" v-model="modal2" @close="modal2 = false">
-            <textarea name="example" id="example" cols="30" rows="10" style="padding-right: 10px; width: 100%;border: 1px solid #eee;"></textarea>
-            <template v-slot:action>
-              <button>제출</button>
-            </template>
-          </ZModal>
-          <button @click="modal3 = true"> no title & action</button>
-          <ZModal v-model="modal3" @close="modal3 = false">
-            <div style="display:flex;justify-content:center;align-items:center;height: 150px;">
-              <p>제목과 액션버튼이 없고, 내용만 있어요</p>
-            </div>
-          </ZModal>
-        </div>
+
       </section>
     </main>
   </div>
@@ -116,15 +82,12 @@
 
 <script>
 // @ is an alias to /src
-import ZModal from '@/components/ZModal.vue'
+
 
 export default {
   name: 'HomeView',
   data(){
     return {
-      modal1: false,
-      modal2: false,
-      modal3: false,
       page: '',
       links: [
         { name: '깃헙',
@@ -140,7 +103,7 @@ export default {
     }
   },
   components: {
-    ZModal
+    // ZModal
   },
   methods:{
     movePage(page){
@@ -308,7 +271,7 @@ export default {
 }
 
 .skill {
-  padding: 60px 20px;
+  padding: 150px 20px;
   h2 {
     font-size: 33px;
     font-weight: 700;

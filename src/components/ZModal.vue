@@ -1,11 +1,11 @@
 <template>
-  <transistion v-if="value" name="modal">
+  <transition v-if="value" name="modal" appear>
     <div class="z-modal" :class="!title ? 'no-title' : ''">
       <span class="z-modal__wall" @click.self="$emit('close')"></span>
       <div class="z-modal__wrap">
         <div class="z-modal__header">
           <h1 class="z-modal__title">{{ title }}</h1>
-          <button class="z-modal__close" @click="$emit('close')">X</button>
+          <button class="z-modal__close" @click="$emit('close')">닫기</button>
         </div>
         <div class="z-modal__contents">
           <slot />
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </transistion>
+  </transition>
 </template>
 
 <script>
@@ -89,9 +89,29 @@ export default {
   }
   &__close {
     margin-left: auto;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    &:after, &:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 3px;
+      height: 20px;
+      background-color: #333;
+      content: '';
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
   }
   &__title {
     text-align: left;
+    font-size: 20px;
   }
   &__contents {
     padding: 20px 10px 10px;
@@ -114,7 +134,7 @@ export default {
   transition: opacity 0.4s;
 
   // 오버레이에 포함되어 있는 모달 윈도의 트랜지션
-  .ppl-popup__wrap, .ppl-signup-popup__wrap {
+  .z-modal__wrap {
     transition: opacity 0.4s, transform 0.4s;
   }
 }
@@ -127,7 +147,7 @@ export default {
 .modal-enter, .modal-leave-to {
   opacity: 0;
 
-  .ppl-popup__wrap, .ppl-signup-popup__wrap {
+  .z-modal__wrap {
     opacity: 0;
     transform: translateY(-20px);
   }
