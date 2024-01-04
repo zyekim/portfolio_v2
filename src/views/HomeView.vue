@@ -1,46 +1,77 @@
 <template>
   <div class="portfolio-wrap">
     <header class="header" :class="scroll ? 'scroll': ''">
-      <h1 class="logo">zyekim <span v-if="false">/{{ page }}</span></h1>
-      <nav class="nav">
-        <p v-for="page in ['skill','project','work']" :key="page">
-          {{ page }}
-        </p>
-      </nav>
+      <div class="header__inner">
+        <h1 class="logo">zyekim <span v-if="false">/{{ page }}</span></h1>
+        <nav class="nav">
+          <p v-for="page in ['skill','project','work']" :key="page">
+            {{ page }}
+          </p>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="home">
-        <div class="home__left">
-          <div class="home__text-wrap">
-            <p>안녕하세요.
-              <br>
-              <span class="highlight">
-                <vue-typer class="custom-type" :repeat='Infinity' :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 고수"]'
-                  :shuffle='false' initial-action='typing' :pre-type-delay='70' :type-delay='70' :pre-erase-delay='2000'
-                  :erase-delay='250' erase-style='select-all' :erase-on-complete='false' caret-animation='blink' />
-              </span>
-            </p>
-            <p class="job"> 주니어 프론트엔드개발자, 웹퍼블리셔 김지혜입니다 :&#41; </p>
-            <ul class="links">
-              <li class="links__item" v-for="item in links" :key="item.name" @click="movePage(item.name)">
-                <img :src="require(`@/assets/images/${item.src}`)" :key="item.name">
-                <span class="links__tooltip">{{ item.name }}</span>
+        <div class="home__inner">
+          <div class="home__left">
+            <div class="home__text-wrap">
+              <p>안녕하세요.
+                <br>
+                <span class="highlight">
+                  <vue-typer class="custom-type" :repeat='Infinity' :text='["n년차 커뮤니케이터", "사용자 편의를 최우선으로 하는", "구글링 고수"]'
+                    :shuffle='false' initial-action='typing' :pre-type-delay='70' :type-delay='70' :pre-erase-delay='2000'
+                    :erase-delay='250' erase-style='select-all' :erase-on-complete='false' caret-animation='blink' />
+                </span>
+              </p>
+              <p class="job"> 주니어 프론트엔드개발자, 웹퍼블리셔 김지혜입니다 :&#41; </p>
+              <ul class="links">
+                <li class="links__item" v-for="item in links" :key="item.name" @click="movePage(item.name)">
+                  <img :src="require(`@/assets/images/${item.src}`)" :key="item.name">
+                  <span class="links__tooltip">{{ item.name }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <aside>
+            <!-- todo: 이미지 추가예정 -->
+          </aside>
+        </div>
+      </section>
+      <section class="experience" aria-label="body">
+        <h2 class="section-title">프로젝트</h2>
+        <div class="desc-wrap" v-for="project in projectList" :key="project.id">
+          <div class="desc-wrap__content">
+            <h4 class="section-subtitle">{{ project.title }}</h4>
+            <p class="section-caption">{{ project.period }}</p>
+            <ul>
+              <li v-for="item in project.desc" :key="item.index">
+                {{ item }}
               </li>
             </ul>
+            <p class="section-subtitle2">
+              사용 스킬 / framework
+            </p>
+            <div class="skill-chips">
+              <p class="skill-chips__item" v-for="skill in project.skills" :key="skill">
+                {{ skill }}
+              </p>
+            </div>
+          </div>
+          <div class="desc-wrap__img" v-if="project.imgsrc">
+            <img :src="project.imgsrc" :alt="project.title">
           </div>
         </div>
 
-        <aside>
-          <!-- todo: 이미지 추가예정 -->
-        </aside>
       </section>
-      <section class="skill">
-        <h2>What my develop skill included</h2>
+
+      <hr class="divider" />
+      <!-- <section class="skill">
+        <h2 data-aos="fade-up">What my develop skill included</h2>
         <ul class="skill__list">
           <li>
             <p class="skill__name">Vue</p>
             <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 90%;"></p>
+              <p class="skill__bar" style="width: 90%;"></p>후
               <span>90%</span>
             </div>
           </li>
@@ -87,7 +118,7 @@
             </div>
           </li>
         </ul>
-      </section>
+      </section> -->
       <section class="project"></section>
       <section class="project">
 
@@ -98,7 +129,8 @@
 
 <script>
 // @ is an alias to /src
-
+import projectList from '@/json/project.json'
+// const projectList = projectdb
 
 export default {
   name: 'HomeView',
@@ -117,6 +149,7 @@ export default {
         },
       ],
       scroll: false,
+      // projectList: projectList,
     }
   },
   components: {
@@ -128,6 +161,11 @@ export default {
   },
   unmounted(){
     document.removeEventListener('scroll', this.detectScroll);
+  },
+  computed: {
+    projectList() {
+      return projectList.reverse()
+    }
   },
   methods:{
     movePage(page){
@@ -165,16 +203,21 @@ export default {
 }
 
 .header {
-  padding: 0 20px;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
   z-index: 50;
+  &__inner {
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    height: 60px;
+  }
   .logo {
     font-weight: 700;
     font-size: 22px;
@@ -217,12 +260,18 @@ export default {
 }
 
 .home {
-  padding: 60px 20px;
-  display: flex;
   width: 100%;
   height: 100vh;
   background-color: rgb(246, 248, 236);
   background-image: url(data:image/png;base64,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);
+  &__inner {
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+  }
   &__left{
     flex: 0 1 750px;
     position: relative;
@@ -308,7 +357,7 @@ export default {
 }
 
 .skill {
-  padding: 100px 20px;
+  padding: 140px 20px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -373,6 +422,71 @@ export default {
   }
 }
 
+section[aria-label="body"] {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  text-align: left;
+}
+.section {
+  &-title {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #356493;
+  }
+  &-subtitle {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &-subtitle2 {
+    margin: 18px 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &-body {
+
+  }
+  &-caption {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+    color: #a09f9f;
+  }
+}
+
+
+
+.desc-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 30px;
+
+  &__content {
+    flex-basis: 45%;
+  }
+
+  &__img {
+
+  }
+}
+
+.skill-chips {
+  &__item {
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(218, 217, 212, 0.5);
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
 </style>
 <style lang="scss">
 .custom-type {
