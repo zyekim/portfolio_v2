@@ -65,7 +65,7 @@ export default {
     border-radius: 5px;
     background-color: #fff;
     z-index: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__header {
     padding: 0 10px;
@@ -117,7 +117,6 @@ export default {
     padding: 20px 10px 10px;
     min-height: fit-content;
     height: auto;
-    overflow-y: scroll;
     text-align: left;
   }
   &.no-title {
