@@ -38,15 +38,13 @@
         </div>
       </section>
       <section class="experience" aria-label="body">
-        <h2 class="section-title">프로젝트</h2>
+        <h2 class="section-title">프로젝트 <span class="section-refer"> 외부 요청으로 진행된 프로젝트의 경우, 자세한 UI화면 예시가 어렵습니다. 양해 부탁드립니다.</span></h2>
         <div class="desc-wrap" v-for="project in projectList" :key="project.id">
           <div class="desc-wrap__content">
             <h4 class="section-subtitle">{{ project.title }}</h4>
             <p class="section-caption">{{ project.period }}</p>
-            <ul>
-              <li v-for="item in project.desc" :key="item.index">
-                {{ item }}
-              </li>
+            <ul class="details">
+              <li v-for="item in project.desc" :key="item.index" class="details__item" v-html="item" />
             </ul>
             <p class="section-subtitle2">
               사용 스킬 / framework
@@ -58,68 +56,56 @@
             </div>
           </div>
           <div class="desc-wrap__img" v-if="project.imgsrc">
-            <img :src="project.imgsrc" :alt="project.title">
+            <img :src="require(`@/assets/images/project/${project.imgsrc}`)" :alt="project.title">
           </div>
         </div>
 
       </section>
-
-      <hr class="divider" />
-      <!-- <section class="skill">
-        <h2 data-aos="fade-up">What my develop skill included</h2>
-        <ul class="skill__list">
-          <li>
-            <p class="skill__name">Vue</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 90%;"></p>후
-              <span>90%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">React</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 60%;"></p>
-              <span>60%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">JS</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 85%;"></p>
-              <span>85%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">jQuery</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 95%;"></p>
-              <span>95%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">HTML</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 98%;"></p>
-              <span>98%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">css</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 98%;"></p>
-              <span>98%</span>
-            </div>
-          </li>
-          <li>
-            <p class="skill__name">scss</p>
-            <div class="skill__bar-wrap">
-              <p class="skill__bar" style="width: 90%;"></p>
-              <span>90%</span>
-            </div>
-          </li>
+      <section class="skill" aria-label="body">
+        <hr class="section-divider"/>
+        <h2 class="section-title">보유 기술</h2>
+        <h4 class="section-subtitle">Javascript 프레임워크</h4>
+        <p class="section-subtitle2">vue</p>
+        <ul class="details">
+          <li class="details__item">vue template 사용에 능숙합니다. (vue lifecycle hook)</li>
+          <li class="details__item">vue 관련 ui component framework 활용에 능숙합니다.</li>
+          <li class="details__item">vue store 개발 경험이 있습니다</li>
         </ul>
-      </section> -->
-      <section class="project"></section>
+        <p class="section-subtitle2">react</p>
+        <ul class="details">
+          <li class="details__item">React hook 활용에 익숙합니다.</li>
+        </ul>
+        <h4 class="section-subtitle">Javascript</h4>
+        <ul class="details">
+          <li class="details__item">프로젝트에서 javascript 사용해 스크립트 작성 경험이 다수입니다.</li>
+        </ul>
+
+
+        <h4 class="section-subtitle">SCSS</h4>
+        <ul class="details">
+          <li class="details__item">scss 문법에 능숙하며, mixin 사용에 익숙합니다.</li>
+        </ul>
+
+        <h4 class="section-subtitle">HTML/CSS</h4>
+        <ul class="details">
+          <li class="details__item">웹표준 및 웹접근성에 준수하여 작업합니다.</li>
+          <li class="details__item">BEM법칙에 따른 클래스 명명에 능숙합니다.</li>
+          <li class="details__item">최신 css기술에 대해 항상 관심을 기울이고 브라우져 호환성을 체크해가며 작업합니다.</li>
+          <li class="details__item">반응형 웹페이지 제작 경험이 많습니다.</li>
+          <li class="details__item">display: flex 사용에 능숙합니다.</li>
+        </ul>
+
+        <h4 class="section-subtitle">git/sourcetree</h4>
+        <ul class="details">
+          <li class="details__item">git 기본사용법에 익숙합니다.</li>
+          <li class="details__item">github, gitlab으로 관리되는 프로젝트 경험이 다수입니다.</li>
+        </ul>
+
+        <h4 class="section-subtitle">기타 기술</h4>
+        <ul class="details">
+          <li class="details__item">마크다운 문법에 익숙합니다.</li>
+        </ul>
+      </section>
       <section class="project">
 
       </section>
@@ -356,99 +342,105 @@ export default {
   }
 }
 
-.skill {
-  padding: 140px 20px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    font-size: 33px;
-    font-weight: 700;
-    color: #2f3b47;
-  }
-  &__list {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    flex-flow: row wrap;
-    width: 1000px;
-    min-width: 0;
-    li {
-      flex: 1 1 calc(50% - 20px);
-      display: flex;
-      column-gap: 20px;
-      align-items: center;
-      min-width: 0;
-      &:first-of-type{
-        flex-basis: 100%;
-      }
-    }
-  }
-  &__name {
-    display:inline-grid;
-    flex: 0 0 auto;
-    width: 100px;
-    height: 100px;
-    place-content: center;
-    background-color: #f2f1eb;
-    border-radius: 100%;
-    border: 3px solid #739072;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 20px;
-    color: #2f3b47;
-  }
-  &__bar-wrap{
-    flex: 2 1 auto;
-    position: relative;
-    height: 50px;
-    background-color: #dfdfdf59;
-    text-align: center;
-    border-radius: 10px;
-    span {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-    }
-  }
-  &__bar {
-    height: 50px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background: #749073;
-  }
-}
+// .skill {
+//   padding: 140px 20px;
+//   display: flex;
+//   flex-flow: column nowrap;
+//   justify-content: center;
+//   align-items: center;
+//   h2 {
+//     font-size: 33px;
+//     font-weight: 700;
+//     color: #2f3b47;
+//   }
+//   &__list {
+//     margin-top: 40px;
+//     display: flex;
+//     gap: 20px;
+//     flex-flow: row wrap;
+//     width: 1000px;
+//     min-width: 0;
+//     li {
+//       flex: 1 1 calc(50% - 20px);
+//       display: flex;
+//       column-gap: 20px;
+//       align-items: center;
+//       min-width: 0;
+//       &:first-of-type{
+//         flex-basis: 100%;
+//       }
+//     }
+//   }
+//   &__name {
+//     display:inline-grid;
+//     flex: 0 0 auto;
+//     width: 100px;
+//     height: 100px;
+//     place-content: center;
+//     background-color: #f2f1eb;
+//     border-radius: 100%;
+//     border: 3px solid #739072;
+//     font-weight: 700;
+//     letter-spacing: 2px;
+//     font-size: 20px;
+//     color: #2f3b47;
+//   }
+//   &__bar-wrap{
+//     flex: 2 1 auto;
+//     position: relative;
+//     height: 50px;
+//     background-color: #dfdfdf59;
+//     text-align: center;
+//     border-radius: 10px;
+//     span {
+//       position: absolute;
+//       left: 50%;
+//       top: 50%;
+//       transform: translate(-50%, -50%);
+//       color: #fff;
+//     }
+//   }
+//   &__bar {
+//     height: 50px;
+//     border-top-left-radius: 10px;
+//     border-bottom-left-radius: 10px;
+//     background: #749073;
+//   }
+// }
 
 section[aria-label="body"] {
-  padding: 20px;
   margin: 0 auto;
+  padding: 0 20px;
   width: 100%;
   max-width: 1280px;
   text-align: left;
 }
+
 .section {
   &-title {
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: 30px;
     font-weight: 700;
     color: #356493;
   }
+
   &-subtitle {
-    margin-top: 24px;
+    margin-top: 28px;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
   }
+
   &-subtitle2 {
     margin: 18px 0 10px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
   }
-  &-body {
 
+  &-body {
+    font-size: 16px;
+    font-weight: 500;
   }
+
   &-caption {
     margin: 8px 0;
     font-size: 16px;
@@ -456,32 +448,62 @@ section[aria-label="body"] {
     font-style: italic;
     color: #a09f9f;
   }
+
+  &-refer {
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: #777;
+    &:before {
+      content: '*';
+    }
+  }
+
+  &-divider {
+    margin: 10px 0;
+    border-top: 1px solid #eee;
+  }
 }
 
+.details {
+  margin: 12px 0;
+
+  &__item {
+    margin-left: 8px;
+    padding: 5px 0;
+    padding-left: 4px;
+    list-style-type: '-';
+    font-weight: 300;
+    color: #555;
+  }
+}
 
 
 .desc-wrap {
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 30px;
+  column-gap: 35px;
 
   &__content {
     flex-basis: 45%;
   }
 
   &__img {
-
+    margin: 24px 0;
+    flex-basis: 55%;
   }
 }
 
 .skill-chips {
+  margin: 10px 0 20px;
   &__item {
     display: inline-block;
     padding: 0 6px;
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background: rgba(218, 217, 212, 0.5);
+    background: rgba(234 ,200 ,228 , 0.5);
     border-radius: 3px;
     font-size: 14px;
     white-space: nowrap;
