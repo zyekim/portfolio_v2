@@ -97,7 +97,7 @@
 
         <h4 class="section-subtitle">git/sourcetree</h4>
         <ul class="details">
-          <li class="details__item">git 기본사용법에 익숙합니다.</li>
+          <li class="details__item">git 기본사용법에 익숙하고 sourcetree 연동하여 git flow관리에 능숙합니다</li>
           <li class="details__item">github, gitlab으로 관리되는 프로젝트 경험이 다수입니다.</li>
         </ul>
 
