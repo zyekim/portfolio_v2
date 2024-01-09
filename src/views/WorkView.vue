@@ -55,12 +55,30 @@
           </div>
         </div>
       </div>
+      <div class="work__wrap">
+        <h2>순수 javascript</h2>
+        <hr />
+        <!-- hangman -->
+        <div class="work__item">
+          <h3>Hangman Game</h3>
+            <div class="work__box">
+              <iframe
+                src="https://codesandbox.io/embed/53g2tr?view=Editor+%2B+Preview&module=%2Findex.html&hidenavigation=1"
+                style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+                title="hangman"
+                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+              ></iframe>
+            </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ZModal from '@/components/ZModal.vue'
+import ZModal from '@/components/ZModal.vue';
 
 export default {
   name: 'WorkView',
@@ -75,8 +93,6 @@ export default {
   components: {
     ZModal
   },
-  computed:{
-  },
   methods:{
     start (el) {
       el.style.height = el.scrollHeight + 'px'
@@ -85,21 +101,18 @@ export default {
       el.style.height = ''
     },
     clickAccordion(index){
-
-
       if(index === this.selectedAccordion){
         this.selectedAccordion = 0
       }else {
         this.selectedAccordion = index
       }
-    }
+    },
   }
 
 
 }
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 .work {
   margin: 110px auto 80px;
   padding: 0 20px;
@@ -116,6 +129,7 @@ export default {
     left: 0;
     height: 50px;
     background-color: #fff;
+    z-index: 10;
     button {
       padding: 3px 10px;
       height: 30px;
