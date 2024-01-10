@@ -93,6 +93,9 @@ export default {
   components: {
     ZModal
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods:{
     start (el) {
       el.style.height = el.scrollHeight + 'px'
