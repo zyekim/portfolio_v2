@@ -112,10 +112,10 @@
           <div class="desc-wrap">
             <div class="desc-wrap__content">
               <h4 class="section-subtitle">TodoList</h4>
-              <p class="section-caption">(VUE)</p>
+              <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline">https://daily-todolist-zyekim.netlify.app/</a></p>
               <ul class="details">
                 <li class="details__item">
-                  vue lifecycle활용한 기능 구현
+                  vue lifecycle활용한 'CRUD' 구현
                 </li>
                 <li class="details__item">'lowdb' localStrage를 통해 리스트데이터 추가 삭제 가능</li>
                 <li class="details__item">uuid/vue store/vuex 경험</li>
@@ -201,11 +201,7 @@ export default {
     moveScroll(target){
       const pageHeaderHeight = 60;
       let pageLocation = document.getElementsByClassName(target)[0].offsetTop - pageHeaderHeight - 30;
-      if(target === 'work'){
-        this.$router.push('/work');
-      }else {
-        window.scrollTo({top: pageLocation, behavior: "smooth"});
-      }
+      window.scrollTo({top: pageLocation, behavior: "smooth"});
     },
     scrollTop(){
       window.scroll({
