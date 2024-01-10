@@ -2,9 +2,9 @@
   <div class="portfolio-wrap">
     <header class="header" :class="scroll ? 'scroll': ''">
       <div class="header__inner">
-        <h1 class="logo">zyekim <span v-if="false">/{{ page }}</span></h1>
+        <h1 class="logo" @click="scrollTop()">zyekim <span v-if="false">/{{ page }}</span></h1>
         <nav class="nav">
-          <p v-for="page in ['skill','project','work']" :key="page">
+          <p v-for="page in ['project','skill','work']" :key="page" @click="moveScroll(page)">
             {{ page }}
           </p>
         </nav>
@@ -37,7 +37,7 @@
           </aside>
         </div>
       </section>
-      <section class="experience" aria-label="body">
+      <section class="project" aria-label="body">
         <h2 class="section-title">프로젝트 <span class="section-refer"> 외부 요청으로 진행된 프로젝트의 경우, 자세한 UI화면 예시가 어렵습니다. 양해 부탁드립니다.</span></h2>
         <div class="desc-wrap" v-for="project in projectList" :key="project.id">
           <div class="desc-wrap__content">
@@ -106,8 +106,28 @@
           <li class="details__item">마크다운 문법에 익숙합니다.</li>
         </ul>
       </section>
-      <section class="project">
-
+      <section class="work" aria-label="body">
+        <hr class="section-divider"/>
+          <h2 class="section-title">개인 작업물 <span class="section-refer"> 더 많은 작업물은 <router-link to="/work" class="text-underline">work</router-link>페이지나, <a href="https://github.com/zyekim" class="text-underline">github</a>에서 확인할 수 있습니다.</span></h2>
+          <div class="desc-wrap">
+            <div class="desc-wrap__content">
+              <h4 class="section-subtitle">TodoList</h4>
+              <p class="section-caption">(VUE)</p>
+              <ul class="details">
+                <li class="details__item">
+                  vue lifecycle활용한 기능 구현
+                </li>
+                <li class="details__item">'lowdb' localStrage를 통해 리스트데이터 추가 삭제 가능</li>
+                <li class="details__item">uuid/vue store/vuex 경험</li>
+                <li class="details__item">전체, 완료, 미완료로 상태를 구분해 sort 가능</li>
+                <li class="details__item">텍스트 수정시 수정된 최종날짜 추가</li>
+                <li class="details__item">UI/UX 디자인</li>
+              </ul>
+            </div>
+            <div class="desc-wrap__img">
+              <img src="@/assets/images/project/vue_todo.png" alt="vue todo list">
+            </div>
+          </div>
       </section>
     </main>
   </div>
@@ -178,6 +198,21 @@ export default {
         this.scroll = false
       }
     },
+    moveScroll(target){
+      const pageHeaderHeight = 60;
+      let pageLocation = document.getElementsByClassName(target)[0].offsetTop - pageHeaderHeight - 30;
+      if(target === 'work'){
+        this.$router.push('/work');
+      }else {
+        window.scrollTo({top: pageLocation, behavior: "smooth"});
+      }
+    },
+    scrollTop(){
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
   }
 }
 </script>
@@ -341,72 +376,6 @@ export default {
     }
   }
 }
-
-// .skill {
-//   padding: 140px 20px;
-//   display: flex;
-//   flex-flow: column nowrap;
-//   justify-content: center;
-//   align-items: center;
-//   h2 {
-//     font-size: 33px;
-//     font-weight: 700;
-//     color: #2f3b47;
-//   }
-//   &__list {
-//     margin-top: 40px;
-//     display: flex;
-//     gap: 20px;
-//     flex-flow: row wrap;
-//     width: 1000px;
-//     min-width: 0;
-//     li {
-//       flex: 1 1 calc(50% - 20px);
-//       display: flex;
-//       column-gap: 20px;
-//       align-items: center;
-//       min-width: 0;
-//       &:first-of-type{
-//         flex-basis: 100%;
-//       }
-//     }
-//   }
-//   &__name {
-//     display:inline-grid;
-//     flex: 0 0 auto;
-//     width: 100px;
-//     height: 100px;
-//     place-content: center;
-//     background-color: #f2f1eb;
-//     border-radius: 100%;
-//     border: 3px solid #739072;
-//     font-weight: 700;
-//     letter-spacing: 2px;
-//     font-size: 20px;
-//     color: #2f3b47;
-//   }
-//   &__bar-wrap{
-//     flex: 2 1 auto;
-//     position: relative;
-//     height: 50px;
-//     background-color: #dfdfdf59;
-//     text-align: center;
-//     border-radius: 10px;
-//     span {
-//       position: absolute;
-//       left: 50%;
-//       top: 50%;
-//       transform: translate(-50%, -50%);
-//       color: #fff;
-//     }
-//   }
-//   &__bar {
-//     height: 50px;
-//     border-top-left-radius: 10px;
-//     border-bottom-left-radius: 10px;
-//     background: #749073;
-//   }
-// }
 
 section[aria-label="body"] {
   margin: 0 auto;
