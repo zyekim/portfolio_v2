@@ -55,7 +55,7 @@
               </p>
             </div>
           </div>
-          <div class="desc-wrap__img" v-if="project.imgsrc">
+          <div class="desc-wrap__right-content" v-if="project.imgsrc">
             <img :src="require(`@/assets/images/project/${project.imgsrc}`)" :alt="project.title">
           </div>
         </div>
@@ -108,26 +108,65 @@
       </section>
       <section class="work" aria-label="body">
         <hr class="section-divider"/>
-          <h2 class="section-title">개인 작업물 <span class="section-refer"> 더 많은 작업물은 <router-link to="/work" class="text-underline">work</router-link>페이지나, <a href="https://github.com/zyekim" class="text-underline">github</a>에서 확인할 수 있습니다.</span></h2>
-          <div class="desc-wrap">
-            <div class="desc-wrap__content">
-              <h4 class="section-subtitle">TodoList</h4>
-              <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline">https://daily-todolist-zyekim.netlify.app/</a></p>
-              <ul class="details">
-                <li class="details__item">
-                  vue lifecycle활용한 'CRUD' 구현
-                </li>
-                <li class="details__item">'lowdb' localStrage를 통해 리스트데이터 추가 삭제 가능</li>
-                <li class="details__item">uuid/vue store/vuex 경험</li>
-                <li class="details__item">전체, 완료, 미완료로 상태를 구분해 sort 가능</li>
-                <li class="details__item">텍스트 수정시 수정된 최종날짜 추가</li>
-                <li class="details__item">UI/UX 디자인</li>
-              </ul>
-            </div>
-            <div class="desc-wrap__img">
-              <img src="@/assets/images/project/vue_todo.png" alt="vue todo list">
-            </div>
+        <h2 class="section-title">개인 작업물 <span class="section-refer"> 더 많은 작업물은 <router-link to="/work" class="text-underline">work</router-link>페이지나, <a href="https://github.com/zyekim" class="text-underline">github</a>에서 확인할 수 있습니다.</span></h2>
+        <div class="desc-wrap">
+          <div class="desc-wrap__content">
+            <h4 class="section-subtitle">TodoList</h4>
+            <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline">https://daily-todolist-zyekim.netlify.app/</a></p>
+            <ul class="details">
+              <li class="details__item">
+                vue lifecycle활용한 'CRUD' 구현
+              </li>
+              <li class="details__item">'lowdb' localStrage를 통해 리스트데이터 추가 삭제 가능</li>
+              <li class="details__item">uuid/vue store/vuex 경험</li>
+              <li class="details__item">전체, 완료, 미완료로 상태를 구분해 sort 가능</li>
+              <li class="details__item">텍스트 수정시 수정된 최종날짜 추가</li>
+              <li class="details__item">UI/UX 디자인</li>
+            </ul>
           </div>
+          <div class="desc-wrap__right-content">
+            <img src="@/assets/images/project/vue_todo.png" alt="vue todo list">
+          </div>
+        </div>
+      </section>
+      <section class="experience" aria-label="body">
+        <hr class="section-divider"/>
+        <h2 class="section-title">경력</h2>
+        <div class="desc-wrap">
+          <div class="desc-wrap__content">
+            <h4 class="section-subtitle">유아이랩 🏢</h4>
+          </div>
+          <div class="desc-wrap__right-content">
+            <p class="section-subtitle2">웹퍼블리셔/프론트엔드 개발자</p>
+            <ul class="details">
+              <li class="details__item">2023/01 - 2023/09 : '교원 차세대 영업관리시스템구축'에 프리랜서 웹퍼블리셔로 재직</li>
+              <li class="details__item">2020/11 - 2022/12 : 웹퍼블리셔와 프론트엔드 개발자로 재직</li>
+            </ul>
+          </div>
+        </div>
+         <hr class="section-divider"/>
+        <h2 class="section-title">교육</h2>
+        <div class="desc-wrap">
+          <div class="desc-wrap__content">
+            <h4 class="section-subtitle">국비교육과정 💻</h4>
+          </div>
+          <div class="desc-wrap__right-content">
+            <p class="section-subtitle2">[웹코딩]UIUX반응형(REACT,javascript),프론트엔드 개발자</p>
+            <ul class="details">
+              <li class="details__item">2023/04 - 2023/05 : React 기초과정 수강</li>
+            </ul>
+
+            <p class="section-subtitle2">하이미디어학원 UI/UX 반응형 웹퍼블리셔/웹디자인 A</p>
+            <ul class="details">
+              <li class="details__item">2020/03 - 2020/09 : 웹퍼블리셔과정 수강(<b>성적우수상 수상</b>)</li>
+            </ul>
+
+            <p class="section-subtitle2">빅데이터 소셜마케팅 전문인력 양성과정</p>
+            <ul class="details">
+              <li class="details__item">2015/12 - 2016/02 : 빅데이터 분석/마케팅 수강 (<b>공모전 장려상 수상</b>)</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -200,7 +239,7 @@ export default {
     },
     moveScroll(target){
       const pageHeaderHeight = 60;
-      let pageLocation = document.getElementsByClassName(target)[0].offsetTop - pageHeaderHeight - 30;
+      let pageLocation = document.getElementsByClassName(target)[0].offsetTop - pageHeaderHeight;
       window.scrollTo({top: pageLocation, behavior: "smooth"});
     },
     scrollTop(){
@@ -454,9 +493,12 @@ section[aria-label="body"] {
     flex-basis: 45%;
   }
 
-  &__img {
+  &__right-content {
     margin: 24px 0;
     flex-basis: 55%;
+    > *:first-of-type{
+      margin-top: 0;
+    }
   }
 }
 
