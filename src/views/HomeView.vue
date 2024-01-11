@@ -108,11 +108,11 @@
       </section>
       <section class="work" aria-label="body">
         <hr class="section-divider"/>
-        <h2 class="section-title">개인 작업물 <span class="section-refer"> 더 많은 작업물은 <router-link to="/work" class="text-underline">work</router-link>페이지나, <a href="https://github.com/zyekim" class="text-underline">github</a>에서 확인할 수 있습니다.</span></h2>
+        <h2 class="section-title">개인 작업물 <span class="section-refer"> 더 많은 작업물은 <router-link to="/work" class="text-underline">work</router-link>페이지나, <a href="https://github.com/zyekim" class="text-underline" target="_blank">github</a>에서 확인할 수 있습니다.</span></h2>
         <div class="desc-wrap">
           <div class="desc-wrap__content">
             <h4 class="section-subtitle">TodoList</h4>
-            <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline">https://daily-todolist-zyekim.netlify.app/</a></p>
+            <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline" target="_blank">https://daily-todolist-zyekim.netlify.app/</a></p>
             <ul class="details">
               <li class="details__item">
                 vue lifecycle활용한 'CRUD' 구현
