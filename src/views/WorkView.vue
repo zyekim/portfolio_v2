@@ -68,20 +68,15 @@
               title="hangman"
               allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
               sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-            ></iframe>
+            />
           </div>
-
         </div>
         <div class="work__item">
-          <h3>drag&drop</h3>
-          <div class="work__box">
-            <iframe src="https://codesandbox.io/embed/7y4zc9?view=Editor+%2B+Preview&module=%2Findex.html"
-                style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-                title="drag list"
-                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-              ></iframe>
-          </div>
+          <h3 style="position:relative">drag&drop
+            <a class="href-icon" href="https://codesandbox.io/p/sandbox/drag-list-7y4zc9" target="_blank">
+              <img src="@/assets/images/link.png" alt="코드보러가기">
+            </a>
+          </h3>
         </div>
       </div>
     </div>
@@ -122,8 +117,6 @@ export default {
       }
     },
   }
-
-
 }
 </script>
 <style lang="scss">
@@ -247,36 +240,16 @@ export default {
 }
 // end poup
 
-// start drag list
-.drag-list {
-  padding: 10px;
-  width: 500px;
-  background-color: #c6d4d1;
-  &__item {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    column-gap: 8px;
-    height: 50px;
-    min-width: 0;
-    background-color: #fff;
-    border-radius: 15px;
-    &:not(:first-of-type){
-      margin-top: 10px;
-    }
-    span {
-      display: grid;
-      place-content: center;
-      flex-basis: 50px;
-      font-size: 22px;
-    }
-    p {
-      flex-grow: 1;
-      font-size: 18px;
-      font-weight: 500;
-    }
+.href-icon {
+  margin-left: 8px;
+  display: grid;
+  place-content: center;
+  width: 25px;
+  height: 25px;
+  img {
+    width: 20px;
+    height: auto;
   }
 }
-// end drag list
 
 </style>
