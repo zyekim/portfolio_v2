@@ -4,6 +4,7 @@ import router from './router'
 import VueTyperPlugin from 'vue-typer'
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import '@/assets/scss/index.scss';
 // CommonJS
 // var VueTyperPlugin = require('vue-typer').default
 // Global

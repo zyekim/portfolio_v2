@@ -115,7 +115,7 @@
             <p class="section-caption">(VUE) <a href="https://daily-todolist-zyekim.netlify.app/" class="text-underline" target="_blank">https://daily-todolist-zyekim.netlify.app/</a></p>
             <ul class="details">
               <li class="details__item">
-                vue lifecycle활용한 'CRUD' 구현
+                vue lifecycle 활용한 'CRUD' 구현
               </li>
               <li class="details__item">'lowdb' localStrage를 통해 리스트데이터 추가 삭제 가능</li>
               <li class="details__item">uuid/vue store/vuex 경험</li>
@@ -125,6 +125,7 @@
             </ul>
           </div>
           <div class="desc-wrap__right-content">
+            <router-link to="/work" class="text-underline float-right mb20">👉 더 많은 작업물 보러가기</router-link>
             <img src="@/assets/images/project/vue_todo.png" alt="vue todo list">
           </div>
         </div>
@@ -144,7 +145,7 @@
             </ul>
           </div>
         </div>
-         <hr class="section-divider"/>
+        <hr class="section-divider"/>
         <h2 class="section-title">교육</h2>
         <div class="desc-wrap">
           <div class="desc-wrap__content">

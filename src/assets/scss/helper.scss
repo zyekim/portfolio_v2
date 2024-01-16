@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 .text-underline {
   text-decoration: underline;
   text-underline-position: from-font;
@@ -5,4 +7,57 @@
 
 .flex-space {
   flex-grow: 1!important;
+}
+
+$sides: (left,right);
+@each $side in $sides {
+  .float-#{$side}{
+    float: $side;
+    @include clearfix();
+  }
+}
+
+$position: ( "all", "left", "right", "bottom", "top","x","y");
+
+@for $amounts from -100 to 100 {
+  @each $space in $amounts {
+    @each $side in $position {
+      @if $side == 'all' {
+        .ma#{$space} {
+          margin: #{$space}px;
+        }
+
+        .pa#{$space} {
+          padding: #{$space}px;
+        }
+      } @else if $side == 'x' {
+        .mx#{$space} {
+          margin-left: #{$space}px;
+          margin-right: #{$space}px;
+        }
+
+        .px#{$space} {
+          padding-left: #{$space}px;
+          padding-right: #{$space}px;
+        }
+      } @else if $side == 'y' {
+        .my#{$space} {
+          margin-top: #{$space}px;
+          margin-bottom: #{$space}px;
+        }
+        .py#{$space} {
+          padding-top: #{$space}px;
+          padding-bottom: #{$space}px;
+        }
+    } @else {
+        .m#{str-slice($side, 0, 1)}#{$space} {
+          margin-#{$side}: #{$space}px;
+        }
+
+        .p#{str-slice($side, 0, 1)}#{$space} {
+          padding-#{$side}: #{$space}px;
+        }
+      }
+    }
+  }
 }
