@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!-- <nav v-if="false" class="app-nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/CalendarView">Calendar</router-link>
-    </nav> -->
     <router-view/>
   </div>
 </template>
