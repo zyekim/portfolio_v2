@@ -220,7 +220,7 @@
             <router-link to="/work"
               ><h4 class="section-subtitle">
                 Others<img
-                  style="width: 20px; margin-left: 4px"
+                  style="margin-left: 4px; display: inline; width: 20px"
                   src="@/assets/images/link.png"
                   alt="링크아이콘"
                 /></h4
