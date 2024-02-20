@@ -113,6 +113,18 @@
               alt="converter"
             />
           </div>
+          <div class="work__box work__box--column pt0">
+            <h3 style="position: relative">
+              Movie Web
+              <a
+                class="href-icon"
+                href="https://zyekim.github.io/react-beginner/"
+                target="_blank"
+              >
+                <img src="@/assets/images/link.png" alt="코드보러가기" />
+              </a>
+            </h3>
+          </div>
         </div>
       </div>
       <div class="work__wrap">
