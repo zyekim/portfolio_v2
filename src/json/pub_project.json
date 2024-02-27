@@ -2,9 +2,10 @@
   {
     "id" : 1,
     "title": "유아이랩 홈페이지 제작",
+    "link": "http://www.ui-lab.co.kr/",
     "period": "2020/12 - 2020/01",
     "skills": ["CSS","HTML","SCSS","GULP"],
-    "desc": ["자사 홈페이지의 전반적인 웹퍼블리싱을 담당했습니다.."],
+    "desc": ["웹퍼블리싱 100%"],
     "imgsrc" : "ui-lab.png"
   },
   {
@@ -12,76 +13,59 @@
     "title": "아이스크림 에듀 '국어 문해력이 답이다' Client 개발",
     "period": "2020/12 - 2021/03",
     "skills": ["Vue","Javascript","CSS","HTML","SCSS"],
-    "desc":["Vue를 사용해 초기 버튼 컴포넌트를 제작했습니다", "전반적인 페이지와 컴포넌트 웹퍼블리싱을 담당했습니다."],
+    "desc":["Vue 기반 웹 퍼블리싱 100%","컴포넌트/화면 퍼블리싱"],
     "imgsrc" : "icecream-edu.jpeg"
   },
   {
     "id" : 3,
-    "title": "SK텔링크 홈페이지 리뉴얼",
-    "period": "2021/02/05 - 2021/03/08",
-    "skills": ["Vue","Javascript","CSS","HTML","SCSS"],
-    "desc": ["기존 페이지를 <b> VUE환경으로 마이그레이션</b>하는 프로젝트입니다.", "scroll Top, main footer 등 vue template에 맞춰 퍼블리싱 Javascript 활용해 마이그레이션 담당했습니다."],
-    "imgsrc" : "sktelink.png"
-  },
-  {
-    "id" : 4,
-    "title": "LGE.co.kr PDP 제작",
-    "period": "2021/04",
-    "skills": ["CSS","HTML","Javascript","JQuery"],
-    "desc": ["LG전자 페이지 LG개발환경으로 마이그레이션 담당했습니다." , "신규 요청페이지 웹퍼블리싱 담당했습니다"],
-    "imgsrc" : ""
-  },
-  {
-    "id" : 5,
-    "title": "LG C-Display 상시운영",
-    "period": "2021/05 - 2021/06",
-    "skills": ["CSS","HTML","SCSS","Javascript","JQuery"],
-    "desc": ["LG C-Display 신규 요청페이지 웹퍼블리싱 담당했습니다."],
-    "imgsrc" : ""
-  },
-  {
-    "id" : 6,
     "title": "SEMES 홈페이지 신규 구축",
     "period": "2021/05 - 2021/06",
+    "link" : "https://www.semes.com/",
     "skills": ["CSS","HTML","SCSS","Javascript","JQuery"],
     "desc": [
-      "semes 홈페이지 신규 구축 프로젝트 후반에 투입되어, <b>디자인/개발 요청사항에 대응을 담당</b>했습니다.",
-      "(PC/Mobile 버전의 페이지들 전반적인 수정)"
+      "웹 퍼블리싱 60%",
+      "반응형 페이지",
+      "QA/개발 요청사항 대응"
     ],
     "imgsrc" : "semes.png"
   },
   {
-    "id" : 7,
+    "id" : 4,
     "title": "대신 마이데이터",
     "period": "2021/06 - 2021/12",
     "skills": ["GULP","CSS","HTML","SCSS","Javascript","JQuery"],
-    "desc": ["대신 모바일 APP 추가 신규서비스 프로젝트입니다. 관련 페이지 대부분 웹퍼블리싱을 작업하였습니다. 방대한 데이터의 다양한 케이스를 위한 <b>개발 친화적 html 구조</b>를 짜는데 능숙합니다.",
-      "개발요청사항에 맞게 gulp 빌드구조를 설정했습니다", "<b>안드로이드(Adroid OS), 아이폰(IOS) 환경에서 호환성 검수</b>와 수정 작업하였습니다",
-    "개발 및 기획 요청사항에 대응해 javascript,scss 적극 활용에 능숙합니다."],
+    "desc": [
+      "웹퍼블리싱 80%",
+      "대신 <b>모바일 APP</b> 추가 신규서비스 프로젝트",
+      "개발요청사항에 맞게 gulp 빌드구조를 설정",
+      "모바일 OS 크로스 브라우징"
+    ],
     "imgsrc" : ""
   },
   {
-    "id" : 8,
+    "id" : 5,
     "title": "페이퍼리스",
     "period": "2022/01 - 2022/08",
+    "link" : "https://paperless.onl/",
     "skills": ["Vue","Javascript","Vuetify","CSS","HTML","SCSS"],
     "desc": [
-      "Vue를 사용한 자사 프로젝트로 <b 폴더 구조 설계</b>를 담당했습니다. SPA사이트에 적합한 layout 구조화(에러페이지 등), 컴포넌트와 공통 페이지별 등을 고려한 SCSS파일 구조를 설계했습니다.",
-      "<b>email 템플릿 제작</b>했습니다 (각 클라이언트별, 브라우저별 호환성 검수/수정 포함)",
-      "마케팅 홈페이지와 서비스 <b>홈페이지 전체를 담당해 웹퍼블리싱</b> 하였습니다. 마케팅페이지에서는 팝업, 아코디언메뉴, 페이지네이션 등 vue transition와 Javascript vue lifecycle을 통해 컴포넌트 제작하습니다. 스크롤event을 Javascript로 구현하였습니다. 서비스 페이지에선 vuetify을 활용해 디자인에 맞는 스타일로 변경해 제작하였습니다.",
-      "<b>개인정보 수정 화면을 담당해 개발</b>하였습니다. vue lifecycle, RESTful API 사용에 익숙합니다.",
-      "크로스 브라우징<b>(웹페이지, 아이폰, 안드로이드 os 환경 호환성 검수 수정)</b>"
+      "Vue 기반 웹 퍼블리싱 100% : 메인/마케팅 2개 페이지",
+      "신규 서비스 구축 및 기획 백엔드 협업 작업 : 메인/마케팅/관리자",
+      "email 템플릿 제작 담당",
+      "크로스 브라우징 대응"
     ],
     "imgsrc" : "paperless.png"
   },
   {
-    "id" : 9,
+    "id" : 6,
     "title":"교원 차세대 영업관리시스템구축",
     "period":"2022/08 - 2023/09",
     "skills": ["Quasar","Vue3","SCSS","HTML","Javascript"],
     "desc": [
-      "공통개발과 협업해 <b> 공통컴포넌트 제작을 </b> 주업무로 하였습니다. Quasar 기반 컴포넌트를 기획 및 디자인에 맞춰 override 하는 등 <b>vue 기반 UI component framework 사용에 능숙</b>합니다.",
-      "삼성 SDS의 <b> 인도GDC 소속 웹퍼블리셔들 위해 페이지 제작 가이드 제공해 페이지 완성도 높이는데 기여했습니다.</b> 페이지별 가이드, 기획의도에 따른 컴포넌트 스타일링 가이드 등 무수의 페이지를 기획서 기반으로 제작하는데 관리감독하였습니다."
+      "인도 GDC측 퍼블리셔 가이드 제작 및 화면 검수",
+      "Vue 기반 웹 퍼블리싱 50%, Quasar UI framework",
+      "공통 컴포넌트 레이아웃 구축",
+      "공통 컴포넌트 개발 협업"
     ]
   }
 ]
