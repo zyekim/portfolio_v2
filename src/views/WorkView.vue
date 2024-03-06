@@ -1,7 +1,7 @@
 <template>
   <div class="work">
     <div class="work__header">
-      <button class="home" @click="$router.push('/')">Go Home</button>
+      <button @click="$router.push('/')">Go Home</button>
     </div>
     <div>
       <div class="work__wrap">

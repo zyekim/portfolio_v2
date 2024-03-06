@@ -5,7 +5,7 @@
         <h1 class="logo" @click="scrollTop()">zyekim</h1>
         <nav class="nav">
           <p
-            v-for="page in ['project', 'skill', 'work']"
+            v-for="page in ['project', 'skill']"
             :key="page"
             @click="moveScroll(page)"
           >
@@ -156,12 +156,16 @@
           <li class="details__item">다수의 프로젝트에서 경험하였습니다.</li>
         </ul>
         <h4 class="section-subtitle">Javascript 프레임워크</h4>
-        <p class="section-subtitle2">vue</p>
+        <p class="section-subtitle2">Vue</p>
         <ul class="details">
           <li class="details__item">vue template 사용에 능숙합니다.</li>
           <li class="details__item">
             vue 관련 ui component framework custom override 능숙합니다.
           </li>
+        </ul>
+        <p class="section-subtitle2">React</p>
+        <ul class="details">
+          <li class="details__item">JSX문법으로 화면 퍼블리싱에 능숙합니다.</li>
         </ul>
         <h4 class="section-subtitle">git/sourcetree</h4>
         <ul class="details">
@@ -179,7 +183,7 @@
           <li class="details__item">마크다운 문법에 익숙합니다.</li>
         </ul>
       </section>
-      <section class="work" aria-label="content">
+      <!-- <section class="work" aria-label="content">
         <hr class="section-divider" />
         <h2 class="section-title">개인 작업물</h2>
         <div class="desc-wrap">
@@ -214,7 +218,7 @@
             />
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="experience" aria-label="content">
         <hr class="section-divider" />
         <h2 class="section-title">교육</h2>

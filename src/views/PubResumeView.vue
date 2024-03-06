@@ -2,15 +2,11 @@
   <div>
     <div class="container">
       <div class="img-wrap">
-        <!-- <img src="@/assets/images/profile_img.jpg" alt="이미지" /> -->
-        <img src="@/assets/images/temp.jpeg" alt="이미지" />
+        <img src="@/assets/images/profile_img.jpg" alt="이미지" />
       </div>
       <div class="section section--top">
         <div class="section__item">
-          <h1>
-            FE개발자 (이름)
-            <!-- 김지혜 -->
-          </h1>
+          <h1>웹퍼블리셔 김지혜</h1>
           <ul class="dot-style mt20">
             <li>협업을 위해 배려하고 소통하며! 성장하기 위해 노력합니다.</li>
             <li>
@@ -24,34 +20,26 @@
         </div>
         <div class="section__item" style="align-self: flex-end">
           <ul style="font-size: 14px">
-            <li>
-              ✉️ (이메일)
-              <!-- k_jihye92@naver.com -->
-            </li>
-            <li>
-              📱 (연락처)
-              <!-- +82 010-9386-0586 -->
-            </li>
+            <li>✉️ k_jihye92@naver.com</li>
+            <li>📱 +82 010-9386-0586</li>
             <li>
               📒 Portfolio :
-              <a href="https://zyekim.github.io">
-                포트폴리오주소
-                <!-- https://zyekim.github.io -->
-              </a>
+              <a href="https://zyekim.github.io/#/publish"
+                >https://zyekim.github.io/</a
+              >
             </li>
             <li>
               📝 Blog :
-              <a href="https://velog.io/@k_jihye92/posts">
-                기술블로그
-                <!-- https://velog.io/@k_jihye92 -->
-              </a>
+              <a href="https://velog.io/@k_jihye92/posts"
+                >https://velog.io/@k_jihye92</a
+              >
             </li>
             <li>
-              🐙 Github:
-              <a href="https://github.com/zyekim">
-                깃헙
-                <!-- https://github.com/zyekim -->
-              </a>
+              👩‍💻 notion :
+              <a
+                href="https://www.notion.so/ZYEKIM-CODE-81f1f72258ee4106989ba951a8ffd64d?pvs=4"
+                >https://www.notion.so/ZYEKIM-CODE</a
+              >
             </li>
           </ul>
         </div>
@@ -59,10 +47,7 @@
       <div class="section">
         <div class="section__item">
           <h2>Experience</h2>
-          <h3>
-            (회사명)
-            <!-- 유아이랩 -->
-          </h3>
+          <h3>유아이랩</h3>
           <span class="caption">2020.11 - 2023.09</span>
           <p>프론트엔드개발자 / 웹 퍼블리셔</p>
         </div>
@@ -70,16 +55,17 @@
           <h2>Skill</h2>
           <ul style="font-size: 14px">
             <li>
-              <span class="chip">Dev</span> Javascript, Vue, React, jQuery,
-              HTML5, CSS3, Scss
+              <span class="chip">Dev</span> HTML5, CSS3, Scss, Javascript, Vue,
+              React
+            </li>
+            <li>
+              <span class="chip">UX/UI</span> Zepline, Figma, Adobe Photoshop,
+              Illustrator, XD
             </li>
             <li>
               <span class="chip">Office</span> Slack, Zoom, Notion, Confluence
             </li>
-            <li>
-              <span class="chip">Others</span> SourceTree, Zepline, Figma, Adobe
-              Photoshop, Illustrator, XD, Procreate
-            </li>
+            <li><span class="chip">Others</span> SourceTree, Procreate</li>
           </ul>
         </div>
       </div>
@@ -87,58 +73,74 @@
         <div class="section__item">
           <h2>Projects</h2>
           <div class="period-wrap">
+            <span class="period-wrap__period caption"> 2022.08 - 2023.09 </span>
+            <div class="period-wrap__details">
+              <h3>교원 차세대 영업 관리 시스템</h3>
+              <p class="pl4 mt8">웹퍼블리싱 50%</p>
+              <ul class="dot-style pl4 mt5">
+                <li>공통 컴포넌트/레이아웃 구축 (Quasar 기반)</li>
+                <li>
+                  인도 GDC 협업
+                  <ul>
+                    <li>페이지 제작가이드 제공</li>
+                    <li>confluence으로 업데이트 상황 즉각 제공</li>
+                    <li>Zepline 멘션창 통해 문의 대응 / 검수</li>
+                  </ul>
+                </li>
+                <li>모바일/태블릿/PC</li>
+              </ul>
+            </div>
+          </div>
+          <div class="period-wrap">
             <span class="period-wrap__period caption"> 2022.01 - 2022.08 </span>
             <div class="period-wrap__details">
               <h3>
                 페이퍼리스
                 <a href="https://paperless.onl/" class="link-icon">🔗</a>
               </h3>
+              <p class="pl4 mt8">웹퍼블리싱 100% & 프론트엔드 개발 40%</p>
               <ul class="dot-style pl4 mt5">
-                <li>
-                  신규 서비스 구축 및 기획 백엔드 협업 작업 : 메인/마케팅/관리자
-                  3개 페이지
-                </li>
-
-                <li>
-                  메인 서비스
-                  <ul>
-                    <li>메인 서비스 내 정보 수정 화면 개발</li>
-                    <li>Vuetify 기반 컴포넌트 개발 : dialog/tooltip/toast</li>
-                    <li>Html to pdf export 개발 협업</li>
-                  </ul>
-                </li>
-                <li>마케팅웹 화면 SEO 최적화 작업 - nuxt.js 활용</li>
+                <li>Vue 기반 웹 퍼블리싱 전담 : 메인/마케팅</li>
+                <li>email 템플릿 제작 및 클라이언트 별 호환성 검수</li>
+                <li>신규 서비스 구축 및 기획 백엔드 협업 작업</li>
               </ul>
             </div>
           </div>
           <div class="period-wrap">
-            <span class="period-wrap__period caption"> 2021.02 - 2021.03 </span>
+            <span class="period-wrap__period caption"> 2021.06 - 2021.12 </span>
             <div class="period-wrap__details">
-              <h3>
-                SK텔링크 홈페이지 리뉴얼
-                <a href="https://www.sktelink.com/main" class="link-icon">🔗</a>
-              </h3>
+              <h3>대신 마이데이터</h3>
               <ul class="dot-style pl4 mt5">
-                <li>Vue 기반으로 마이그레이션 프로젝트</li>
-                <li>Footer 개발</li>
+                <li>모바일 APP 웹퍼블리싱 80%</li>
+                <li>개발요청사항에 맞게 gulp 빌드구조를 설정</li>
+                <li>모바일 OS 크로스 브라우징</li>
               </ul>
             </div>
           </div>
-          <div class="period-wrap">
-            <span class="period-wrap__period caption"> 2020.12 - 2020.03 </span>
+          <div class="period-wrap print-padding">
+            <span class="period-wrap__period caption"> 2020.12 - 2021.03 </span>
             <div class="period-wrap__details">
               <h3>아이스크림 에듀 ‘국어 문해력이 답이다’</h3>
               <ul class="dot-style pl4 mt5">
-                <li>Vue 기반 태블릿 App</li>
-                <li>Button component 개발</li>
-                <li>Vue template 퍼블리싱</li>
+                <li>
+                  태블릿 App / Vue 기반 웹 퍼블리싱 100% (vue, html, scss)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="period-wrap">
+            <span class="period-wrap__period caption"> 2020.12 - 2020.01 </span>
+            <div class="period-wrap__details">
+              <h3>유아이랩 홈페이지 리뉴얼</h3>
+              <ul class="dot-style pl4 mt5">
+                <li>웹 퍼블리싱 100%</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="section print-break">
+      <div class="section">
         <div class="section__item">
           <h2>Training</h2>
           <div class="period-wrap">
@@ -186,106 +188,9 @@
           <h3>HSK 6급 <span class="caption">2016.08</span></h3>
         </div>
       </div>
-      <div class="section print-continue">
-        <!-- start General -->
-        <!-- <div class="section__item">
-          <h2>Cover Letter</h2>
-          <h3>지원동기 - 끊임없는 학습과 도전</h3>
-          <div class="cv-text">
-            약 2년간 웹 퍼블리셔로서 업무하면서, 때때로 개발팀의 산출물이 기획
-            의도나 디자인 요소가 정확히 반영되지 않는 일들이 있었습니다. 더
-            완성도 높은 웹 서비스를 제공하기 위해서 단순 모크업 페이지를 넘어
-            직접 고객의 니즈를 파악하여 고객이 원하는 화면을 직접 개발해보고
-            싶은 열의가 생겼습니다.
-            <br /><br />
-            페이퍼리스 전자 계약 서비스 런칭 프로젝트 때의 일입니다. 마케팅/메인
-            웹 화면 퍼블리싱을 전담하면서도, 프론트엔트 개발자로서의 역량을
-            키우기 위해 직접 자원하여 화면 개발에 참여했습니다. 데이터를 수신,
-            비교하고 송신하는 과정이 예 상했던 것보다 복잡했지만, 문제 해결을
-            위해 퇴근 후 ‘Vue’ ‘Javascript’ 강의를 꾸준히 수강했고, 코딩테스트
-            가능한 플랫폼을 활용하여, 개발자 역량을 강화해왔습니다. 그 결과 '내
-            정보 수정'화면 개발을 100% 전담하여 무사히 마칠 수 있었습니다.
-
-            <br /><br />어떤 프로젝트를 수행하더라도 개발하기 편한 코드가 아닌
-            항상 사용자 친화적인 프로덕트를 구현하기 위한 코드를 고민하는 것이
-            중요하다고 생각합니다. 끊임없는 배움과 도전을 통해 원 클릭으로
-            고객이 원하는 정확한 정보를 제공하는 직관적인 화면을 구현하는
-            개발자가 되고 싶습니다.
-          </div>
-          <h3>핵심 역량 -시각화로 정확하고 명료한 '커뮤니케이션'</h3>
-          <div class="cv-text">
-            프로젝트를 성공적으로 수행하기 위해서는 다양한 분야의 팀 간의
-            정확하고 명료한 소통이 필수입니다. 특히, 각 팀의 상황을 시각적인
-            자료를 활용하여 보다 쉽게 이해하고 소통할 경우, 문제를 더 신속하고
-            정확하게 처리할 수 있습니다. <br /><br />
-            '교원 차세대 영업 관리 시스템 구축 프로젝트' 때 일입니다. 인도 GDC와
-            의 협업해 대규모 페이지를 제작해야하는 상황에서 언어적 한계뿐만
-            아니라 고객 니즈에 따른 지속적인 공통 컴포넌트 레이아웃 변화로
-            페이지 완성도와 기한에 문제가 생겼습니다. 이를 해결하기 위해
-            팀원들과 협업하여, 공통 레이아웃과 컴포넌트 등 직접 웹 퍼블리싱하고
-            적재적소에 배치하도록 작업 가이드를 메뉴얼화해 인도 개발자에게
-            제공했습니다. <br />
-            협업 툴을 사용해 소통 단계를 단순화해 실시간 업데이트와 검수를
-            가능하게 했습니다. 내부 기획자들에게 웹 기획서를 기반으로 인도
-            개발자가 페이지 제작 시의 언어적 한계 문제를 설명하여, 공통
-            컴포넌트를 직관적으로 알수있게 시각적으로 통일해 제공하도록
-            요청하였습니다. 이러한 노력으로 3주 지연 가능성 문제를 극복하고 기간
-            내에 마무리했으며, 고객사로부터는 기존 GDC가 참여한 프로젝트 중 가장
-            완성도 높은 웹 퍼블리싱 화면으로 평가받았습니다.
-
-            <br /><br />문제 발생 시 원인을 논리적으로 파악하고, 시각화된 자료를
-            톻해 원인과 해결점을 직관적으로 소통해 효과적으로 해결하는 능력을
-            갖고 있습니다. 앞으로도 예 상치 못한 문제에 적극적으로 의사소통하고
-            협업하여 더 나은 결과물을 위해 지속적으로 발전하는 개발자로
-            성장하고자 합니다.
-          </div>
-        </div> -->
-        <!-- end General -->
+      <div class="section print-continue print-none">
         <div class="section__item">
           <h2>Cover Letter</h2>
-          <h3 class="print-none">지원동기 - 같이의 가치</h3>
-          <div class="cv-text print-none">
-            회사의 구성원으로서 회사의 목표와 성장을 위해서는 단순히 맡은 일에
-            최선을 다하는 것뿐만 아니라, 하나의 유기체로서 함께 방향성을
-            고민해야 장기적인 성공이 가능하다고 믿습니다. 이러한 사고방식으로
-            레몬베이스의 핵심 가치에 큰 공감을 느낍니다.
-
-            <br /><br />
-            과거 자사 서비스 구축 프로젝트에서는 주니어 간의 의사소통 부재로
-            프로젝트 진척이 지연된 경험이 있습니다. 공동의 목표를 기반으로 한
-            역할 이해 부족으로 각자의 업무를 수행하다 보니 예상치 못한 문제들이
-            발생했습니다. 이를 통해 배운 것은 개발이나 기획에만 초점을 두는 것이
-            아니라, 팀 전체가 하나로 협력하고 서로의 역할을 이해하며 목표를
-            공유하는 것이 중요하다는 것입니다.
-
-            <br /><br />
-            지속적인 상호작용이 목표를 향한 중요한 원동력이 될 것으로
-            기대합니다. 저는 이러한 가치와 목표에 부합하는 환경에서 더 나은
-            개발자로 성장하고, 팀 내에서의 긍정적인 기여를 통해 함께 성공하는
-            일원이 되고 싶습니다.
-          </div>
-          <h3>지원동기/입사후포부 - 끊임없는 학습과 도전</h3>
-          <div class="cv-text">
-            약 3년간 웹 퍼블리셔로서 업무하면서, 때때로 개발팀의 산출물이 기획
-            의도나 디자인 요소가 정확히 반영되지 않는 일들이 있었습니다. 더
-            완성도 높은 웹 서비스를 제공하기 위해서 단순 모크업 페이지를 넘어
-            직접 고객의 니즈를 파악하여 고객이 원하는 화면을 직접 개발해보고
-            싶은 열의가 생겼습니다.
-            <br /><br />
-            페이퍼리스 전자 계약 서비스 런칭 프로젝트 때의 일입니다. 마케팅/메인
-            웹 화면 퍼블리싱을 전담하면서도, 프론트엔트 개발자로서의 역량을
-            키우기 위해 직접 자원하여 화면 개발에 참여했습니다. 데이터를 수신,
-            비교하고 송신하는 과정이 예 상했던 것보다 복잡했지만, 문제 해결을
-            위해 퇴근 후 ‘Vue’ ‘Javascript’ 강의를 꾸준히 수강했고, 코딩테스트
-            가능한 플랫폼을 활용하여, 개발자 역량을 강화해왔습니다. 그 결과 '내
-            정보 수정'화면 개발을 100% 전담하여 무사히 마칠 수 있었습니다.
-
-            <br /><br />어떤 프로젝트를 수행하더라도 개발하기 편한 코드가 아닌
-            항상 사용자 친화적인 프로덕트를 구현하기 위한 코드를 고민하는 것이
-            중요하다고 생각합니다. 끊임없는 배움과 도전을 통해 원 클릭으로
-            고객이 원하는 정확한 정보를 제공하는 직관적인 화면을 구현하는
-            개발자가 되고 싶습니다.
-          </div>
           <h3>핵심 역량 - 시각화로 정확하고 명료한 '커뮤니케이션'</h3>
           <div class="cv-text">
             프로젝트를 성공적으로 수행하기 위해서는 다양한 분야의 팀 간의
@@ -313,10 +218,10 @@
             문제 발생 시 원인을 논리적으로 파악하고, 시각화된 자료를 톻해 원인과
             해결점을 직관적으로 소통해 효과적으로 해결하는 능력을 갖고 있습니다.
             앞으로도 예상치 못한 문제에 적극적으로 의사소통하고 협업하여 더 나은
-            결과물을 위해 지속적으로 발전하는 개발자로 성장하고자 합니다.
+            결과물을 위해 지속적으로 발전하는 팀원이 되겠습니다.
           </div>
-          <h3 class="print-none">입사후 포부 - 끊임없는 학습과 도전</h3>
-          <div class="cv-text print-none">
+          <h3>입사후 포부 - 끊임없는 학습과 도전</h3>
+          <div class="cv-text">
             직관적이고 시각적으로 매력적인 인터페이스가 사용자의 흥미를 끌고
             긍정적인 경험을 제공하는 데 필수적이라고 믿습니다. 사용자 중심의
             UI/UX 디자인이 디자이너와 기획자의 핵심 역량이라면, 그 목표를
@@ -324,7 +229,7 @@
             개발자로서의 도전 정신과 끊임없는 학습 열망은 매우 중요한
             역량입니다.
             <br /><br />
-            페이퍼리스 전자 계약 서비스 런칭 프로젝트 때의 일입니다. 마케팅/메인
+            페이버리스 전자 계약 서비스 런칭 프로젝트 때의 일입니다. 마케팅/메인
             웹 화면 퍼블리싱을 전담하면서도, 프론트엔드 개발자로서의 역량을
             키우기 위해 직접 자언하여 화면 개발에 참여했습니다. 데이터를 수신,
             비교하고 송신하는 과정이 기대했던 것보다 복잡했지만, 이에 대한 문제
@@ -339,24 +244,6 @@
             불편함이나 이질감을 느끼지 않는 화면을 만들어내는 개발자가
             되겠습니다.
           </div>
-          <!-- 지난 3년여간 사용자 편의성을 최우선으로 두고, 웹 퍼블리싱
-            담당자임에도 불구하고 개발역량을 지속 강화해온 만큼 프로젝트의
-            목적을 달성하기 위해 스스로 끊임없이 발전하고 있다고 생각합니다. -->
-          <!-- <h3>입사 후 포부 - 유저 중심의 프로덕트 설계</h3>
-          <div class="cv-text">
-
-            직관적이고 시각적으로 매력적인 인터페이스가 사용자의 흥미를 끌고
-            긍정적인 경험을 제공하는 데 필수적이라고 믿습니다. 사용자 중심의
-            UI/UX 디자인이 디자이너와 기획자의 역량이라면, 그 목표를 완성시키는
-            것은 개발자의 역량입니다. 프론트엔드 개발자로서, 끊임없는 웹 기술에
-            대해 지속적이고 적극적인 관심이 필요합니다.
-
-            <br />
-            <br />
-            내부에서는 기획자가 가장 인정하는 개발자, 외부에서는 어떤 고객도
-            화면의 불편함이나 이질감을 느끼지 않는 화면을 만들어내는 개발자가
-            되겠습니다.
-          </div> -->
         </div>
       </div>
     </div>
@@ -566,6 +453,10 @@
       page-break-before: auto;
       page-break-inside: avoid;
       border-top: 0;
+    }
+
+    .print-padding {
+      padding-top: 30px;
     }
 
     // .print-continue {
