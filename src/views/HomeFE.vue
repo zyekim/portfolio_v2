@@ -118,11 +118,9 @@
         <h2 class="section-title">보유 기술</h2>
         <p class="section-subtitle2">Vue</p>
         <ul class="details">
-          <li class="details__item">vue lifecycle 사용에 능숙합니다.</li>
-          <li class="details__item">
-            vue 기반 component framework 활용에 능숙합니다.
-          </li>
-          <li class="details__item">vuex 개발 경험이 있습니다</li>
+          <li class="details__item">Vue lifecycle 사용 능숙</li>
+          <li class="details__item">Vue 기반 컴포넌트 프레임워크 활용 능숙</li>
+          <li class="details__item">Vuex를 이용한 상태 관리 최적화</li>
         </ul>
         <p class="section-subtitle2">React</p>
         <ul class="details">
@@ -131,15 +129,15 @@
         <h4 class="section-subtitle2">Javascript</h4>
         <ul class="details">
           <li class="details__item">
-            프로젝트에서 javascript 사용해 스크립트 작성 경험이 다수입니다.
+            다수의 프로젝트에서 JavaScript를 사용해 스크립트 작성 경험
           </li>
         </ul>
 
         <h4 class="section-subtitle2">SCSS</h4>
         <ul class="details">
-          <li class="details__item">
-            scss 문법에 능숙하며, mixin 사용에 관심이 많습니다.
-          </li>
+          <li class="details__item">SCSS 문법 능숙, Mixin 사용에 익숙</li>
+          <li class="details__item">BEM법칙에 따른 클래스 명명에 능숙</li>
+          <li class="details__item">반응형/적응형 웹페이지 제작 경험 풍부</li>
         </ul>
 
         <h4 class="section-subtitle2">HTML/CSS</h4>
@@ -148,31 +146,25 @@
             웹표준 및 웹접근성에 준수하여 작업합니다.
           </li>
           <li class="details__item">
-            BEM법칙에 따른 클래스 명명에 능숙합니다.
+            최신 CSS 기술과 브라우저 호환성 고려 작업 능숙
           </li>
-          <li class="details__item">
-            최신 css기술에 대해 항상 관심을 기울이고 브라우져 호환성을
-            체크해가며 작업합니다.
-          </li>
-          <li class="details__item">반응형 웹페이지 제작 경험이 많습니다.</li>
-          <li class="details__item">display: flex 사용에 능숙합니다.</li>
         </ul>
 
         <h4 class="section-subtitle2">git/sourcetree</h4>
         <ul class="details">
+          <li class="details__item">GitHub, GitLab 프로젝트 관리 경험</li>
           <li class="details__item">
-            github, gitlab으로 관리되는 프로젝트 경험이 있습니다.
-          </li>
-          <li class="details__item">
-            git 기본사용법에 익숙하고 sourcetree 연동하여 버전 관리에
-            능숙합니다.
+            Git 기본 사용법 및 Sourcetree 연동 버전 관리 능숙
           </li>
         </ul>
 
         <h4 class="section-subtitle2">Others</h4>
         <ul class="details">
-          <li class="details__item">협업툴: Slack, notion, confluence</li>
-          <li class="details__item">마크다운 문법에 익숙합니다.</li>
+          <li class="details__item">디자인툴: zepline, figma, XD</li>
+          <li class="details__item">
+            협업툴: Slack, notion, confluence, loop, planner, teams
+          </li>
+          <li class="details__item">마크다운 문법에 능숙</li>
         </ul>
       </section>
       <section class="work" aria-label="content">
