@@ -131,7 +131,10 @@
           <div class="period-wrap">
             <span class="period-wrap__period caption"> 2020.12 - 2020.01 </span>
             <div class="period-wrap__details">
-              <h3>유아이랩 홈페이지 리뉴얼</h3>
+              <h3>
+                유아이랩 홈페이지 리뉴얼
+                <a href="http://www.ui-lab.co.kr/" class="link-icon">🔗</a>
+              </h3>
               <ul class="dot-style pl4 mt5">
                 <li>웹 퍼블리싱 100%</li>
               </ul>
