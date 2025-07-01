@@ -43,7 +43,7 @@
                   />
                 </span>
               </p>
-              <p class="job">주니어 프론트엔드개발자 김지혜입니다. :&#41;</p>
+              <p class="job">프론트엔드개발자 김지혜입니다. :&#41;</p>
               <ul class="links">
                 <li
                   class="links__item"

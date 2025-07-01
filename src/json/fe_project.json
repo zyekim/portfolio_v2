@@ -55,35 +55,33 @@
   },
   {
     "id": 5,
-    "title": "위빙-사입",
+    "title": "위빙-사입: 동대문 사입시스템",
     "link": "https://wdtms.weaving.co.kr/",
     "period": "2024/04 - 2024/08",
     "skills": ["Vue3", "Pinia", "Javascript", "Vuetify", "CSS", "HTML", "SCSS"],
     "desc": [
-      "<b>Vue3 기반</b>으로 디자인 리뉴얼 프로젝트 주도",
-      "UI/UX 컴포넌트 변경: 사용자 경험을 개선하기 위해 UI/UX 컴포넌트 재설계 및 적용",
-      "Custom Icon 설치",
-      "Pinia를 활용한 상태 관리: 상태 관리 최적화 및 전역 상태 관리 구현",
-      "Color Theme 및 Vuetify 컴포넌트 커스터마이징: 디자인 일관성 유지 및 사용자 요구 반영",
-      "거래처별 헤더 타이틀 바인딩:각 거래처에 맞는 동적 헤더 타이틀 구현",
-      "정보 팝업 및 수정 페이지 개발: 팝업 창을 통해 상세 정보를 제공하고, 사용자가 정보를 수정할 수 있는 페이지 개발"
+      "전체 UI 리디자인 후 Vue 3 컴포넌트 적용",
+      "Pinia 기반 상태 관리 구조화",
+      "Color Theme 및 Vuetify 컴포넌트 커스터마이징",
+      "거래처에 따라 동적 헤더 타이틀 렌더링",
+      "사용자 정보 수정용 팝업 및 상세 페이지 개발"
     ],
     "imgsrc": "wdtms.png"
   },
   {
     "id": 6,
-    "title": "위빙-익스프레스",
-    "link": "https://www.jupiterlabs.co.kr/",
-    "period": "2024/04 - 2024/06",
+    "title": "위빙-X:특송, 상품관리",
+    "link": "https://www.weaving-x.com/",
+    "period": "2024/07 - 진행중",
     "skills": ["Vue3", "Pinia", "Javascript", "Vuetify", "CSS", "HTML", "SCSS"],
     "desc": [
-      "<b>Vue3 기반</b> 기반으로 개발 환경 세팅을 주도 (Vue Router, SCSS 컴파일, ESLint, EditorConfig, Stylelint 포함)",
-      "주요 페이지 및 기능 개발",
+      "초기 개발 환경 세팅 주도: Vite, vue3, SCSS 컴파일, ESLint, EditorConfig, Stylelint 구성",
       "필터링 기능: 다양한 데이터 필터링 기능 구현, 사용자 맞춤형 데이터 조회 지원",
       "데이터 테이블 바인딩: 복잡한 데이터 테이블 구현, 실시간 데이터 바인딩 및 렌더링 최적화",
       "엑셀 업로드/다운로드: 엑셀 파일을 통한 데이터 업로드 및 다운로드 기능 개발, 데이터 유효성 검사 및 오류 처리 포함",
-      "신규 페이지 개발: 주요 페이지의 웹퍼블리싱 및 기능 개발 전담",
-      "전반적인 프로젝트 유지보수: 버그 수정, 기능 개선 및 디자인 리뉴얼 반영"
+      "웹 퍼블리싱 + 기능 개발: 주요 신규 페이지 전담 제작",
+      "재사용 가능한 컴포넌트 개발 및 전반적인 유지보수(버그 수정, 디자인 리뉴얼 대응)",
+      "PDF 변환 최적화: html 출력 지연 문제 개선"
     ],
     "imgsrc": "express.png"
   }
