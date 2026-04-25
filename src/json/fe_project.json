@@ -3,11 +3,11 @@
     "id": 1,
     "title": "SK텔링크 홈페이지 리뉴얼",
     "link": "https://www.sktelink.com/main",
-    "period": "2021/02/05 - 2021/03/08 | [반응형 web]",
-    "skills": ["Vue", "Javascript", "CSS", "HTML", "SCSS"],
+    "period": "2021/02 - 2021/03 | [반응형 web]",
+    "skills": ["Vue2", "Javascript", "SCSS"],
     "desc": [
-      "<b>Vue2 기반</b>으로 기존 홈페이지의 마이그레이션 작업 주도",
-      "Footer 개발"
+      "<b>Vue2 기반 마이그레이션</b>: 기존 홈페이지 Vue2 전환 작업 참여",
+      "Footer 컴포넌트 개발"
     ],
     "imgsrc": "sktelink.png"
   },
@@ -15,7 +15,7 @@
     "id": 2,
     "title": "아이스크림 에듀 '국어 문해력이 답이다' Client 개발",
     "period": "2020/12 - 2021/03 | [tablet web]",
-    "skills": ["Vue", "Javascript", "CSS", "HTML", "SCSS"],
+    "skills": ["Vue", "Javascript", "SCSS"],
     "desc": [
       "<b>Vue2 기반</b>프론트엔드 개발 및 웹 퍼블리싱 전담",
       "사용자 인터페이스와 기능 개발, 페이지 퍼블리싱",
@@ -25,27 +25,27 @@
   },
   {
     "id": 3,
-    "title": "페이퍼리스",
+    "title": "페이퍼리스 전자계약 서비스",
     "link": "https://paperless.onl/",
     "period": "2022/01 - 2022/08 | [pc web, marketing 반응형 web]",
-    "skills": ["Vue", "Javascript", "Vuetify", "CSS", "HTML", "SCSS"],
+    "skills": ["Vue2", "Nuxt.js", "Vuetify", "Javascript", "SCSS"],
     "desc": [
-      "<b>SEO 성능 최적화</b>: Nuxt.js(SSR)를 도입하여 마케팅 페이지의 검색 엔진 최적화 수행, SEO 성능 지표 30% 향상",
-      "<b>공통 UI 라이브러리 구축</b>: Dialog, Tooltip 등 자주 사용되는 인터페이스를 모듈화하여 개발 생산성 기여",
-      "<b>PDF Export 기능 개발</b>: 웹 데이터를 문서화하여 내보내는 기술적 기능 구현 협업"
+      "<b>SEO 성능 30% 향상</b>: Nuxt.js(SSR) 도입으로 마케팅 페이지 검색엔진 최적화 수행",
+      "<b>공통 UI 라이브러리 구축</b>: Dialog, Tooltip 등 공통 컴포넌트 모듈화로 팀 개발 생산성 기여",
+      "<b>PDF Export 기능 개발</b>: 웹 데이터를 문서로 내보내는 기능 구현 협업"
     ],
     "imgsrc": "paperless.png"
   },
   {
     "id": 4,
-    "title": "주피터랩스 홈페이지",
+    "title": "주피터랩스 홈페이지 리뉴얼",
     "link": "https://www.jupiterlabs.co.kr/",
     "period": "2024/04 - 2024/06 | [반응형 web]",
-    "skills": ["Vue3", "Pinia", "Javascript", "CSS", "HTML", "SCSS"],
+    "skills": ["Vue3", "Pinia", "Javascript", "SCSS"],
     "desc": [
-      "<b>Vue3 기반 마이그레이션</b>: vue-router 및 SCSS 컴파일 환경 등 전반적인 프론트엔드 개발 환경 세팅 주도",
-      "<b>반응형 디자인 리뉴얼</b>: 다양한 디바이스에 대응하는 반응형 레이아웃 구현 및 유지보수 효율성 증대",
-      "<b>상태 관리 도입</b>: Pinia를 활용하여 문의하기 등 사용자 입력 데이터의 상태 관리 구조화"
+      "<b>Vue3 마이그레이션 및 환경 구축</b>: vue-router·SCSS 컴파일 환경 등 프론트엔드 개발 환경 전반 세팅",
+      "<b>반응형 디자인 리뉴얼</b>: 멀티 디바이스 대응 반응형 레이아웃 구현",
+      "<b>Pinia 상태관리 도입</b>: 문의하기 등 사용자 입력 흐름 구조화"
     ],
     "imgsrc": "jupiter.png"
   },
@@ -54,58 +54,77 @@
     "title": "동대문 사입시스템",
     "link": "https://wdtms.weaving.co.kr/",
     "period": "2024/04 - 2024/08 | [mobile web]",
-    "skills": ["Vue3", "Pinia", "Javascript", "Vuetify", "CSS", "HTML", "SCSS"],
+    "skills": ["Vue3", "Pinia", "Vuetify", "Javascript", "SCSS"],
     "desc": [
-      "<b>전면 리디자인 및 컴포넌트 마이그레이션</b>: 퍼블리싱 경험을 활용해 기존 UI를 모바일에 최적화된 Vue3 컴포넌트 기반으로 전면 재구축",
-      "<b>UI 시스템 커스터마이징</b>: Vuetify 테마 확장을 통해 브랜드 전용 UI Kit를 제작하고 디자인 일관성 확보",
-      "<b>동적 비즈니스 로직 구현</b>: 거래처별 동적 헤더 렌더링 및 상품 옵션별 추가 매칭 로직 등 복잡한 상태 관리 처리"
+      "<b>전면 리디자인 및 컴포넌트 마이그레이션</b>: 퍼블리싱 경험 기반 기존 UI를 모바일 최적화 Vue3 컴포넌트 구조로 전환",
+      "<b>Vuetify 커스터마이징</b>: 브랜드 전용 UI Kit 제작 및 디자인 일관성 확보",
+      "<b>동적 비즈니스 로직 구현</b>: 거래처별 동적 헤더 렌더링 및 상품 옵션 매칭 등 복잡한 상태 관리 처리"
     ],
     "imgsrc": "wdtms.png"
   },
   {
     "id": 6,
-    "title": "특송, 상품관리",
+    "title": "국제 특송 · 상품관리 시스템 (자사 서비스)",
     "link": "https://www.weaving-x.com/",
     "period": "2024/07 - 진행중 | [pc web]",
-    "skills": ["Vue3", "Pinia", "Javascript", "Vuetify", "CSS", "HTML", "SCSS"],
+    "skills": ["Vue3", "Pinia", "Vuetify", "TypeScript", "Vite", "SCSS"],
     "desc": [
-      "<b>초기 프로젝트 아키텍처 설계 주도</b>: Vite 기반 환경 구축 및 ESLint/Stylelint 설정을 통한 팀 코드 컨벤션 표준화",
-      "<b>복잡한 데이터 테이블 및 필터링</b>: 대규모 물류 데이터를 효율적으로 조회하기 위한 다중 필터 로직 및 실시간 데이터 바인딩 최적화",
-      "<b>엑셀 데이터 파싱 및 검증</b>: 대량 업로드 시 클라이언트 단 유효성 검사 로직을 구현하여 서버 부하 감소 및 데이터 무결성 보장",
-      "<b>하드웨어 연동 및 출력 최적화</b>: QR/체적기 API 응답 처리 및 PDF 출력 지연 문제 개선을 통한 현장 업무 속도 향상"
+      "<b>초기 아키텍처 설계 주도</b>: Vite 기반 환경 구축 및 ESLint/Stylelint 코드 컨벤션 전사 표준화",
+      "<b>대규모 물류 데이터 테이블 구현</b>: 다중 필터·실시간 데이터 바인딩 최적화로 조회 성능 개선",
+      "<b>클라이언트 단 엑셀 데이터 파싱·검증</b>: 대량 업로드 유효성 검사 로직으로 서버 부하 감소 및 데이터 무결성 보장",
+      "<b>하드웨어 연동 및 출력 최적화</b>: QR·체적기 API 응답 처리 및 PDF 출력 지연 개선으로 현장 업무 속도 향상"
     ],
     "imgsrc": "express.png"
   },
   {
     "id": 7,
-    "title": "푸드 AI 서비스: 유저 대화형 플랫폼 개발",
-    "period": "2024/09 - 진행중",
-    "skills": [
-      "Vue3",
-      "TypeScript",
-      "Stream API",
-      "DeepChat",
-      "Pinia Persistence"
-    ],
+    "title": "푸드 AI 서비스: 유저 대화형 플랫폼",
+    "period": "2025/04 - 2026/01 | [mobile, pc web]",
+    "skills": ["Vue3", "TypeScript", "Stream API", "Pinia", "SCSS"],
     "desc": [
-      "<b>실시간 AI 인터랙션 구현</b>: Stream API를 연동하여 대화형 AI 응답 시스템 구축 및 데이터 청크 단위 렌더링 최적화",
-      "<b>사용자 경험(UX) 중심 기능 개발</b>: Pinia Persistence를 활용한 채팅 히스토리 유지 및 대화 맥락 보존 기능 구현",
-      "<b>컴포넌트 추상화</b>: 외부 UI 라이브러리를 프로젝트 규격에 맞게 래핑(Wrapping)하여 선언적인(Declarative) 컴포넌트 구조 설계",
-      "<b>인터랙티브 UI 퍼블리싱</b>: AI 채팅창 스크롤 제어 및 모바일/웹 반응형 디테일 구현"
+      "<b>전역 조직코드 상태관리 설계</b>: 상단 조직 셀렉트 변경 시 전체 화면·API 호출에 조직코드가 자동 반영되는 Pinia 스토어 구조 설계, 화면 간 데이터 정합성 유지",
+      "<b>권한 기반 동적 라우팅 설계</b>: 토큰 인증 → 공통코드 → 유저정보 → 권한메뉴 순 비동기 초기화 후 addRoute()로 런타임 라우트 주입, 사용자별 접근 가능 화면을 동적으로 구성하는 라우터 가드 구현",
+      "<b>실시간 AI 채팅 인터페이스 구현</b>: Stream API 연동, 청크 단위 렌더링 최적화로 자연스러운 타이핑 효과 구현",
+      "<b>Pinia Persistence 활용</b>: 채팅 히스토리 유지 및 대화 맥락 보존 기능 구현",
+      "<b>컴포넌트 추상화</b>: 외부 UI 라이브러리를 프로젝트 규격에 맞게 래핑하여 선언적 컴포넌트 구조 설계",
+      "<b>모바일/PC 반응형 UI</b>: 채팅창 스크롤 제어 및 디바이스별 UX 최적화"
     ]
   },
   {
     "id": 8,
-    "title": "푸드 AI 백오피스: 데이터 분석 및 운영 관리 시스템",
-    "period": "2024/09 - 진행중",
+    "title": "푸드 AI 백오피스: 데이터 분석 · 운영 관리 시스템",
+    "period": "2025/04 - 2026/01 | [pc web]",
     "skills": ["Vue3", "TypeScript", "VueApexCharts", "Vuetify", "Pinia"],
     "desc": [
-      "<b>데이터 시각화 대시보드 구축</b>: 복잡한 분석 지표 데이터를 VueApexCharts를 활용하여 다차원 그래프로 시각화",
-      "<b>전문화된 관리 도구 개발</b>: AI 모델 설정, 유저 관리, 데이터 로그 모니터링 등 운영 효율을 위한 관리자 기능 전담",
-      "<b>계층형 데이터 관리 시스템 구축</b>: 3Depth 이상의 복잡한 카테고리 구조를 제어하기 위한 <b>재귀적 트리 컴포넌트</b> 설계 및 구현",
-      "<b>조직도 모듈 개발</b>: 조직 내 권한 관리를 위한 인터랙티브 조직도 UI 구현 및 부모/자식 노드 간 데이터 상태 동기화 로직 최적화",
-      "<b>효율적인 데이터 상태 관리</b>: 대량의 통계 데이터를 Pinia 스토어에서 구조화하여 관리하고 API 호출 최적화",
-      "<b>재사용 가능한 UI Kit 활용</b>: Vuetify 기반의 공통 컴포넌트 시스템을 구축하여 백오피스 내 페이지 개발 생산성 향상"
+      "<b>권한 기반 동적 라우팅 설계</b>: 토큰 인증 → 공통코드 → 유저정보 → 권한메뉴 순 비동기 초기화 후 addRoute()로 런타임 라우트 주입, 사용자별 접근 가능 화면을 동적으로 구성하는 라우터 가드 구현",
+      "<b>데이터 시각화 대시보드 구축</b>: VueApexCharts 기반 복잡한 분석 지표를 다차원 그래프로 시각화",
+      "<b>재귀 트리 컴포넌트 설계</b>: 3Depth 이상 복잡한 카테고리 계층을 단일 컴포넌트로 처리하는 구조 설계",
+      "<b>조직도 모듈 개발</b>: 권한 관리용 인터랙티브 조직도 UI 및 부모/자식 노드 데이터 상태 동기화 구현",
+      "<b>Pinia 기반 데이터 상태관리</b>: 대량 통계 데이터 스토어 구조화 및 API 호출 최적화",
+      "<b>Vuetify UI Kit 구축</b>: 공통 컴포넌트 시스템으로 백오피스 페이지 개발 생산성 향상"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "물류/특송 통합시스템 프론트엔드 아키텍처 설계 (WMS·SCM·중국소싱)",
+    "period": "2026/01 - 2026/04 | [pc web]",
+    "skills": ["Vue3", "TypeScript", "Vite", "Pinia", "Monorepo", "SCSS"],
+    "desc": [
+      "<b>MFA · 모노레포 기반의 아키텍처 설계 주도</b>: 복수 물류 서비스(WMS·SCM·소싱)가 공통 컴포넌트를 공유하는 확장 가능한 구조 설계",
+      "<b>팀 개발 표준 수립</b>: ESLint/Prettier 컨벤션 전사 통일 및 공통 컴포넌트 라이브러리 초기 구조 설계",
+      "<b>도메인 이해 기반의 UI 설계</b>: WMS·SCM 물류 흐름을 분석하여 재고·입출고 도메인에 최적화된 컴포넌트 구조 설계"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Kose Korea 통합 백오피스 허브 (SCM·ERP·WMS·POS)",
+    "period": "2026/02 - 진행중 | [pc web]",
+    "skills": ["Vue3", "TypeScript", "Vuetify", "Pinia", "Vite", "SCSS"],
+    "desc": [
+      "<b>프론트엔드 리드 — 아키텍처 설계 및 개발 표준화</b>: 다중 시스템 통합 백오피스 FE 구조 설계 전담, Vuetify 기반 공통 UI Kit 제작",
+      "<b>전자결재 서비스 개발</b>: 다단계 결재 워크플로우 UI 및 상태 흐름 설계·구현",
+      "<b>구매계획 화면 개발</b>: 복잡한 구매 데이터 입력·조회·수정 로직을 컴포넌트 구조로 구현",
+      "<b>ESLint/Prettier 전사 컨벤션 통일</b>: 팀 전체 코드 품질 기반 수립"
     ]
   }
 ]

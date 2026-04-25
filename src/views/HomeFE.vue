@@ -29,7 +29,6 @@
                     :text="[
                       'n년차 커뮤니케이터',
                       '사용자 편의를 최우선으로 하는',
-                      '구글링 고수',
                     ]"
                     :shuffle="false"
                     initial-action="typing"
@@ -94,16 +93,6 @@
                 v-html="item"
               />
             </ul>
-            <!-- <p class="section-subtitle2">사용 스킬 / framework</p>
-            <div class="skill-chips">
-              <p
-                class="skill-chips__item"
-                v-for="skill in project.skills"
-                :key="skill"
-              >
-                {{ skill }}
-              </p>
-            </div> -->
           </div>
           <div class="desc-wrap__right-content" v-if="project.imgsrc">
             <img
@@ -116,55 +105,90 @@
       <section class="skill" aria-label="content">
         <hr class="section-divider" />
         <h2 class="section-title">보유 기술</h2>
-        <p class="section-subtitle2">Vue</p>
-        <ul class="details">
-          <li class="details__item">Vue lifecycle 사용 능숙</li>
-          <li class="details__item">Vue 기반 컴포넌트 프레임워크 활용 능숙</li>
-          <li class="details__item">Vuex를 이용한 상태 관리 최적화</li>
-        </ul>
-        <p class="section-subtitle2">React</p>
-        <ul class="details">
-          <li class="details__item">react hook 활용에 익숙합니다.</li>
-        </ul>
-        <h4 class="section-subtitle2">Javascript</h4>
+
+        <p class="section-subtitle2">Vue3 / TypeScript</p>
         <ul class="details">
           <li class="details__item">
-            다수의 프로젝트에서 JavaScript를 사용해 스크립트 작성 경험
+            Vue3 Composition API 기반 컴포넌트 설계 및 공통 라이브러리 구축 경험
+          </li>
+          <li class="details__item">
+            TypeScript 기반 도메인 타입 설계 및 런타임 오류 사전 방지
+          </li>
+          <li class="details__item">
+            Pinia 상태관리 — 복잡한 전역 상태(조직코드, 권한메뉴 등) 스토어 구조
+            설계 경험
+          </li>
+          <li class="details__item">
+            권한 기반 동적 라우팅 설계 (beforeEach 가드 + addRoute() 런타임
+            주입)
+          </li>
+          <li class="details__item">
+            Vuetify 커스터마이징을 통한 프로젝트 전용 UI Kit 제작 경험
           </li>
         </ul>
 
-        <h4 class="section-subtitle2">SCSS</h4>
-        <ul class="details">
-          <li class="details__item">SCSS 문법 능숙, Mixin 사용에 익숙</li>
-          <li class="details__item">BEM법칙에 따른 클래스 명명에 능숙</li>
-          <li class="details__item">반응형/적응형 웹페이지 제작 경험 풍부</li>
-        </ul>
-
-        <h4 class="section-subtitle2">HTML/CSS</h4>
+        <p class="section-subtitle2">아키텍처 설계</p>
         <ul class="details">
           <li class="details__item">
-            웹표준 및 웹접근성에 준수하여 작업합니다.
+            MFA · 모노레포 기반 멀티 서비스 프론트엔드 아키텍처 설계 경험
           </li>
           <li class="details__item">
-            최신 CSS 기술과 브라우저 호환성 고려 작업 능숙
+            Vite 기반 개발 환경 구축 및 ESLint/Prettier 팀 컨벤션 표준화
+          </li>
+          <li class="details__item">
+            Figma 분석 → 컴포넌트 단위 구조 설계 협업 (기획·디자인·개발 간 조율)
           </li>
         </ul>
 
-        <h4 class="section-subtitle2">git/sourcetree</h4>
+        <p class="section-subtitle2">JavaScript</p>
         <ul class="details">
-          <li class="details__item">GitHub, GitLab 프로젝트 관리 경험</li>
           <li class="details__item">
-            Git 기본 사용법 및 Sourcetree 연동 버전 관리 능숙
+            Stream API 연동 및 청크 단위 렌더링 최적화 경험
+          </li>
+          <li class="details__item">
+            클라이언트 단 엑셀 파싱·유효성 검사, 하드웨어(QR·체적기) API 연동
+            경험
+          </li>
+          <li class="details__item">
+            재귀 트리 컴포넌트 설계로 3Depth 이상 계층 데이터 처리
           </li>
         </ul>
 
-        <h4 class="section-subtitle2">Others</h4>
+        <p class="section-subtitle2">SCSS</p>
         <ul class="details">
-          <li class="details__item">디자인툴: zepline, figma, XD</li>
           <li class="details__item">
-            협업툴: Slack, notion, confluence, loop, planner, teams
+            BEM 방법론 기반 클래스 설계, Mixin·변수 활용 능숙
           </li>
-          <li class="details__item">마크다운 문법에 능숙</li>
+          <li class="details__item">
+            반응형/모바일 최적화 레이아웃 구현 경험 다수
+          </li>
+        </ul>
+
+        <p class="section-subtitle2">Git</p>
+        <ul class="details">
+          <li class="details__item">
+            GitHub · GitLab 기반 브랜치 전략 및 PR 리뷰 경험
+          </li>
+          <li class="details__item">
+            Git 커밋 컨벤션(.gitmessage) 설정 및 팀 표준화 경험
+          </li>
+        </ul>
+
+        <p class="section-subtitle2">Others</p>
+        <ul class="details">
+          <li class="details__item">디자인툴: Figma, Zeplin, XD</li>
+          <li class="details__item">
+            협업툴: Slack, Notion, Confluence, Teams
+          </li>
+          <li class="details__item">
+            AI 개발 도구(Claude, Codex 등) 코드 작성·리팩토링·구조 설계에
+            workflow로 내재화
+          </li>
+        </ul>
+        <p class="section-subtitle2">Languages</p>
+        <ul class="details">
+          <li class="details__item">영어 — 비즈니스 문서 독해 가능</li>
+          <li class="details__item">중국어 — HSK 6급 취득</li>
         </ul>
       </section>
       <section class="work" aria-label="content">
