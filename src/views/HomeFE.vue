@@ -190,7 +190,6 @@
           <li class="details__item">
             영어 — 비즈니스 문서 독해 가능 (TOEIC 860 / HSK 6급)
           </li>
-          <li class="details__item">중국어 — HSK 6급 취득</li>
         </ul>
       </section>
       <section class="work" aria-label="content">
