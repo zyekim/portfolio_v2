@@ -4,7 +4,6 @@ import HomeView from "../views/HomeView.vue";
 import HomeFE from "../views/HomeFE.vue";
 import HomePub from "../views/HomePub.vue";
 import WorkView from "../views/WorkView.vue";
-// import ResumeView from "../views/ResumeView.vue";
 import PubResumeView from "../views/PubResumeView.vue";
 
 Vue.use(VueRouter);
@@ -29,11 +28,6 @@ const routes = [
     name: "WorkView",
     component: WorkView,
   },
-  // {
-  //   path: '/resume',
-  //   name: 'ResumeView',
-  //   component: ResumeView
-  // },
   {
     path: "/resume/pub",
     name: "PubResumeView",

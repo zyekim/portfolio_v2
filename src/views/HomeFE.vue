@@ -27,8 +27,8 @@
                     class="custom-type"
                     :repeat="Infinity"
                     :text="[
-                      'n년차 커뮤니케이터',
-                      '사용자 편의를 최우선으로 하는',
+                      '복잡한 업무 시스템을 구조화하는',
+                      '권한·상태·화면 흐름을 설계하는',
                     ]"
                     :shuffle="false"
                     initial-action="typing"
@@ -130,7 +130,7 @@
         <p class="section-subtitle2">아키텍처 설계</p>
         <ul class="details">
           <li class="details__item">
-            MFA · 모노레포 기반 멀티 서비스 프론트엔드 아키텍처 설계 경험
+            모노레포 기반 멀티 서비스 프론트엔드 구조 설계 참여
           </li>
           <li class="details__item">
             Vite 기반 개발 환경 구축 및 ESLint/Prettier 팀 컨벤션 표준화
@@ -181,13 +181,15 @@
             협업툴: Slack, Notion, Confluence, Teams
           </li>
           <li class="details__item">
-            AI 개발 도구(Claude, Codex 등) 코드 작성·리팩토링·구조 설계에
-            workflow로 내재화
+            Antigravity, Claude, Codex 등 AI 도구를 코드 작성·리팩토링·학습에
+            활용
           </li>
         </ul>
         <p class="section-subtitle2">Languages</p>
         <ul class="details">
-          <li class="details__item">영어 — 비즈니스 문서 독해 가능</li>
+          <li class="details__item">
+            영어 — 비즈니스 문서 독해 가능 (TOEIC 860 / HSK 6급)
+          </li>
           <li class="details__item">중국어 — HSK 6급 취득</li>
         </ul>
       </section>

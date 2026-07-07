@@ -186,7 +186,7 @@
       <div class="section" style="border-top: 0">
         <h2 style="flex: 0 0 20%" class="mb0">Languages</h2>
         <div class="section__item">
-          <h3>Toeic 770 <span class="caption">2018.12</span></h3>
+          <h3>TOEIC 860</h3>
           <h3>Toeic speaking lv.6 <span class="caption">2016.03</span></h3>
           <h3>HSK 6급 <span class="caption">2016.08</span></h3>
         </div>

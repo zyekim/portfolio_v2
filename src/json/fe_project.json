@@ -110,7 +110,7 @@
   {
     "id": 9,
     "title": "물류/특송 통합시스템 프론트엔드 구조 설계 (WMS·SCM·중국소싱)",
-    "period": "2026/03 - 2026/03 | [pc web]",
+    "period": "2026/01 - 2026/04 | [pc web]",
     "skills": ["Vue3", "TypeScript", "Vite", "Pinia", "Monorepo", "SCSS"],
     "desc": [
       "<b>MFA · 모노레포 기반 구조 설계</b>: 복수 물류 서비스(WMS·SCM·소싱)가 공통 컴포넌트를 공유하는 확장 가능한 구조 구상 및 설계",
