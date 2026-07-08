@@ -1,4 +1,3 @@
-@import url('./font.scss');
-@import url('./reset.scss');
-@import url('./mixin.scss');
-@import url('./helper.scss');
+@use './font';
+@use './reset';
+@use './helper';

@@ -1,6 +1,6 @@
 <template>
-  <transition v-if="value" name="modal" appear>
-    <div class="z-modal" :class="!title ? 'no-title' : ''">
+  <transition name="modal" appear>
+    <div v-if="modelValue" class="z-modal" :class="!title ? 'no-title' : ''">
       <span class="z-modal__wall" @click.self="$emit('close')"></span>
       <div class="z-modal__wrap">
         <div class="z-modal__header">
@@ -21,24 +21,18 @@
   </transition>
 </template>
 
-<script>
-export default {
-  name: 'ZModal',
-  props: {
-    value: {
-      type: Boolean,
-      required: true
-    },
-    title: {
-      type: String,
-      required: false
-    },
-    action: {
-      type: Boolean,
-      required: false
-    },
-  },
+<script setup lang="ts">
+interface Props {
+  modelValue: boolean
+  title?: string
 }
+
+defineProps<Props>()
+
+defineEmits<{
+  close: []
+  'update:modelValue': [value: boolean]
+}>()
 </script>
 
 <style lang="scss" scoped>
@@ -143,7 +137,7 @@ export default {
   transition: opacity 0.6s ease 0.4s;
 }
 
-.modal-enter, .modal-leave-to {
+.modal-enter-from, .modal-leave-to {
   opacity: 0;
 
   .z-modal__wrap {

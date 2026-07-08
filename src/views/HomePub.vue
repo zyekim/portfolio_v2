@@ -23,24 +23,9 @@
                 안녕하세요.
                 <br />
                 <span class="highlight">
-                  <vue-typer
-                    class="custom-type"
-                    :repeat="Infinity"
-                    :text="[
-                      'n년차 커뮤니케이터',
-                      '사용자 편의를 최우선으로 하는',
-                      '구글링 고수',
-                    ]"
-                    :shuffle="false"
-                    initial-action="typing"
-                    :pre-type-delay="70"
-                    :type-delay="70"
-                    :pre-erase-delay="2000"
-                    :erase-delay="250"
-                    erase-style="select-all"
-                    :erase-on-complete="false"
-                    caret-animation="blink"
-                  />
+                  <span class="custom-type"
+                    >{{ typed }}<span class="caret" aria-hidden="true"></span
+                  ></span>
                 </span>
               </p>
               <p class="job">웹 퍼블리셔 김지혜입니다. :&#41;</p>
@@ -51,10 +36,7 @@
                   :key="item.name"
                   @click="movePage(item.name)"
                 >
-                  <img
-                    :src="require(`@/assets/images/${item.src}`)"
-                    :key="item.name"
-                  />
+                  <img :src="item.src" :alt="item.name" />
                   <span class="links__tooltip">{{ item.name }}</span>
                 </li>
               </ul>
@@ -111,18 +93,15 @@
             <p class="section-caption">{{ project.period }}</p>
             <ul class="details">
               <li
-                v-for="item in project.desc"
-                :key="item.index"
+                v-for="(item, i) in project.desc"
+                :key="i"
                 class="details__item"
                 v-html="item"
               />
             </ul>
           </div>
           <div class="desc-wrap__right-content" v-if="project.imgsrc">
-            <img
-              :src="require(`@/assets/images/project/${project.imgsrc}`)"
-              :alt="project.title"
-            />
+            <img :src="projectImg(project.imgsrc)" :alt="project.title" />
           </div>
         </div>
       </section>
@@ -262,80 +241,86 @@
   </div>
 </template>
 
-<script>
-  // @ is an alias to /src
-  import projectList from "@/json/pub_project.json";
-  // const projectList = projectdb
+<script setup lang="ts">
+  import { computed, onMounted, onUnmounted, ref } from "vue";
 
-  export default {
-    name: "HomeView",
-    data() {
-      return {
-        page: "",
-        links: [
-          {name: "깃헙", src: "github.png"},
-          {name: "Resume", src: "notion.png"},
-          {name: "벨로그", src: "velog.jpeg"},
-        ],
-        scroll: false,
-        // projectList: projectList,
-      };
-    },
-    components: {
-      // ZModal
-    },
-    mounted() {
-      window.scrollTo(0, 0);
-      document.addEventListener("scroll", this.detectScroll);
-    },
-    unmounted() {
-      document.removeEventListener("scroll", this.detectScroll);
-    },
-    computed: {
-      projectList() {
-        return projectList.reverse();
-      },
-    },
-    methods: {
-      movePage(page) {
-        let href = "";
-        switch (page) {
-          case "깃헙":
-            href = "https://github.com/zyekim";
-            break;
-          case "Resume":
-            href =
-              "https://www.notion.so/ZYEKIM-CODE-81f1f72258ee4106989ba951a8ffd64d?pvs=4";
-            break;
-          case "벨로그":
-            href = "https://velog.io/@k_jihye92/posts";
-            break;
-        }
-        return window.open(href, "_blank");
-      },
-      detectScroll() {
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
+  import projectdb from "@/json/pub_project.json";
+  import type { Project } from "@/types/project";
+  import { useTyper } from "@/composables/useTyper";
+  import githubImg from "@/assets/images/github.png";
+  import notionImg from "@/assets/images/notion.png";
+  import velogImg from "@/assets/images/velog.jpeg";
 
-        if (scrollPosition > 0) {
-          this.scroll = true;
-        } else if (scrollPosition === 0) {
-          this.scroll = false;
-        }
-      },
-      moveScroll(target) {
-        const pageHeaderHeight = 60;
-        let pageLocation =
-          document.getElementsByClassName(target)[0].offsetTop -
-          pageHeaderHeight;
-        window.scrollTo({top: pageLocation, behavior: "smooth"});
-      },
-      scrollTop() {
-        window.scroll({
-          top: 0,
-          behavior: "smooth",
-        });
-      },
-    },
+  interface LinkItem {
+    name: string;
+    src: string;
+  }
+
+  const links: LinkItem[] = [
+    { name: "깃헙", src: githubImg },
+    { name: "Resume", src: notionImg },
+    { name: "벨로그", src: velogImg },
+  ];
+
+  const projects: Project[] = projectdb;
+  const projectList = computed<Project[]>(() => [...projects].reverse());
+
+  const projectImages = import.meta.glob<string>(
+    "../assets/images/project/*",
+    { eager: true, import: "default" },
+  );
+  const projectImg = (name: string) =>
+    projectImages[`../assets/images/project/${name}`];
+
+  const { typed } = useTyper([
+    "n년차 커뮤니케이터",
+    "사용자 편의를 최우선으로 하는",
+    "구글링 고수",
+  ]);
+
+  const scroll = ref(false);
+
+  const detectScroll = () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    scroll.value = scrollPosition > 0;
   };
+
+  const movePage = (page: string) => {
+    let href = "";
+    switch (page) {
+      case "깃헙":
+        href = "https://github.com/zyekim";
+        break;
+      case "Resume":
+        href =
+          "https://www.notion.so/ZYEKIM-CODE-81f1f72258ee4106989ba951a8ffd64d?pvs=4";
+        break;
+      case "벨로그":
+        href = "https://velog.io/@k_jihye92/posts";
+        break;
+    }
+    return window.open(href, "_blank");
+  };
+
+  const moveScroll = (target: string) => {
+    const pageHeaderHeight = 60;
+    const el = document.getElementsByClassName(target)[0] as
+      | HTMLElement
+      | undefined;
+    if (!el) return;
+    window.scrollTo({ top: el.offsetTop - pageHeaderHeight, behavior: "smooth" });
+  };
+
+  const scrollTop = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
+
+  onMounted(() => {
+    window.scrollTo(0, 0);
+    document.addEventListener("scroll", detectScroll);
+  });
+
+  onUnmounted(() => {
+    document.removeEventListener("scroll", detectScroll);
+  });
 </script>

@@ -172,41 +172,31 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+  import { onMounted, ref } from "vue";
+
   import ZModal from "@/components/ZModal.vue";
 
-  export default {
-    name: "WorkView",
-    data() {
-      return {
-        modal1: false,
-        modal2: false,
-        modal3: false,
-        selectedAccordion: 1,
-      };
-    },
-    components: {
-      ZModal,
-    },
-    mounted() {
-      window.scrollTo(0, 0);
-    },
-    methods: {
-      start(el) {
-        el.style.height = el.scrollHeight + "px";
-      },
-      end(el) {
-        el.style.height = "";
-      },
-      clickAccordion(index) {
-        if (index === this.selectedAccordion) {
-          this.selectedAccordion = 0;
-        } else {
-          this.selectedAccordion = index;
-        }
-      },
-    },
+  const modal1 = ref(false);
+  const modal2 = ref(false);
+  const modal3 = ref(false);
+  const selectedAccordion = ref(1);
+
+  const start = (el: Element) => {
+    (el as HTMLElement).style.height = el.scrollHeight + "px";
   };
+
+  const end = (el: Element) => {
+    (el as HTMLElement).style.height = "";
+  };
+
+  const clickAccordion = (index: number) => {
+    selectedAccordion.value = selectedAccordion.value === index ? 0 : index;
+  };
+
+  onMounted(() => {
+    window.scrollTo(0, 0);
+  });
 </script>
 <style lang="scss">
   .work {
@@ -321,7 +311,7 @@
     overflow: hidden;
   }
 
-  .accordion-enter,
+  .accordion-enter-from,
   .accordion-leave-to {
     height: 0 !important;
     opacity: 0;

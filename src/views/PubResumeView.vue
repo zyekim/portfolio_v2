@@ -253,12 +253,6 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: "ResumeView",
-  };
-</script>
-
 <style lang="scss" scoped>
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 

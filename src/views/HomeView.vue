@@ -4,12 +4,6 @@
   </main>
 </template>
 
-<script>
-  export default {
-    name: "HomeView",
-  };
-</script>
-
 <style lang="scss">
   .portfolio-wrap {
     position: relative;
@@ -277,8 +271,26 @@
 
 <style lang="scss">
   .custom-type {
-    .char.custom.typed {
-      color: #2f3b47;
+    color: #2f3b47;
+
+    .caret {
+      display: inline-block;
+      margin-left: 2px;
+      width: 2px;
+      height: 1em;
+      vertical-align: -0.1em;
+      background-color: #2f3b47;
+      animation: caret-blink 1s step-end infinite;
+    }
+  }
+
+  @keyframes caret-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
     }
   }
 </style>
