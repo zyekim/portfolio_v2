@@ -130,5 +130,17 @@
       "<b>구매계획 화면 개발</b>: 복잡한 구매 데이터 입력·조회·수정 로직을 컴포넌트 구조로 구현",
       "<b>ESLint/Prettier 전사 컨벤션 통일</b>: 팀 전체 코드 품질 기반 수립"
     ]
+  },
+  {
+    "id": 11,
+    "title": "SCM 통합 패키지 개발 (WMS·ERP·SCM)",
+    "period": "진행중 | [pc web]",
+    "skills": ["Vue3", "TypeScript", "Vite", "Pinia", "Vuetify", "AG Grid", "SCSS"],
+    "desc": [
+      "<b>통합 업무 패키지 개발</b>: WMS·ERP·SCM 업무 흐름을 하나의 패키지에서 처리할 수 있도록 공통 API·Router·권한·상태관리 및 Base UI Component 구조 설계",
+      "<b>대용량 업무 화면 구현</b>: AG Grid와 Server-side Table을 활용해 조회·정렬·필터·페이징·엑셀 다운로드 화면 개발",
+      "<b>AI Agent 개발 하네스 설계</b>: AGENTS.md와 workflow 문서를 기반으로 기존 화면 수정과 신규 화면 구현 절차를 분리하고, Figma·프로젝트 규약·검증 단계를 연결",
+      "<b>한·영 다국어 구조 적용</b>: 한국어·영어 Language Pack을 적용하고 공통 메시지·메뉴·입력 항목을 언어 리소스로 분리"
+    ]
   }
 ]
